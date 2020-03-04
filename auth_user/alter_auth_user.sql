@@ -1,5 +1,6 @@
 -- create temporary backup table
-CREATE TABLE tmp_auth_user AS (SELECT * FROM auth_user);
+-- CREATE TABLE tmp_auth_user AS (SELECT * FROM auth_user);
+CREATE TABLE tmp_auth_user AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 1000 as new_id from auth_user where id<1000);
 
 -- drop_constraint query
 ALTER TABLE auth_user DROP CONSTRAINT auth_user_reg_person_id_a5c91cbe2cfbe65_fk_reg_person_id;
@@ -42,3 +43,7 @@ ALTER TABLE reg_org_unit ADD CONSTRAINT reg_org_unit_created_by_id_24e2c31154022
 ALTER TABLE reg_org_units_audit_trail ADD CONSTRAINT reg_org_units_audi_app_user_id_4eaebb94181c7a3a_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE reg_person ADD CONSTRAINT reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit__app_user_id_3b2a1e563d3e4ba8_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+-- reset the ids to the new ids created in temp
+UPDATE auth_user SET id=tmp_auth_user.new_id FROM tmp_auth_user WHERE auth_user.id=tmp_auth_user.id;

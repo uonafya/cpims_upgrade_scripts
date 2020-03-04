@@ -1,5 +1,5 @@
 -- backup the original reg_persons overlapping set of records
-CREATE TABLE tmp_reg_person AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 420000 as new_id, created_by_id from reg_person where id > 290000 AND id<400000);
+CREATE TABLE tmp_reg_person AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 1020000 as new_id, created_by_id from reg_person where id > 290000 AND id<420000);
 
 -- drop foreign key constraints to allow adding ON UPDATE CASCADE to the constraints
 alter table reg_person drop constraint reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id;
@@ -157,7 +157,3 @@ alter table reg_persons_org_units add constraint reg_persons_org_org_unit_id_66f
 
 -- reset the ids to the new ids created in temp
 UPDATE reg_person SET id=tmp_reg_person.new_id FROM tmp_reg_person WHERE reg_person.id=tmp_reg_person.id;
-
--- updated created to the original values
-UPDATE reg_person SET created_by_id=tmp_reg_person.created_by_id FROM tmp_reg_person WHERE reg_person.id=tmp_reg_person.id;
-UPDATE reg_person SET created_by_id=tmp_tmp_reg_person.created_by_id FROM tmp_tmp_reg_person WHERE reg_person.id=tmp_tmp_reg_person.id;
