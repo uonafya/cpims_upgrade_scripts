@@ -138,7 +138,7 @@ alter table ovc_sibling add constraint ovc_sibling_person_id_38e6a8c83483e7e1_fk
 alter table ovc_viral_load add constraint ovc_viral_load_person_id_47040e77d2e3be57_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
 alter table reg_persons_audit_trail add constraint reg__person_recorded_paper_id_6618b9f482cad177_fk_reg_person_id FOREIGN KEY (person_recorded_paper_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
 alter table reg_household add constraint reg_household_index_child_id_57d96e3174d773bb_fk_reg_person_id FOREIGN KEY (index_child_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
-alter table reg_person add constraint reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+alter table reg_person add constraint reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
 alter table reg_persons_guardians add constraint reg_person_guardian_person_id_2103bfec8094b41f_fk_reg_person_id FOREIGN KEY (guardian_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
 alter table reg_person_master add constraint reg_person_master_person_id_33b09634671fa083_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
 alter table reg_persons_audit_trail add constraint reg_persons_audit_tr_person_id_8b2e1b0255f7814_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
