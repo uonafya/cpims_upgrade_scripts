@@ -1,3 +1,6 @@
+-- create temporary backup table
+CREATE TABLE tmp_auth_user AS (SELECT * FROM auth_user);
+
 -- drop_constraint query
 ALTER TABLE auth_user DROP CONSTRAINT auth_user_reg_person_id_a5c91cbe2cfbe65_fk_reg_person_id;
 ALTER TABLE auth_login_policy DROP CONSTRAINT auth_login_policy_user_id_2a000083249850f3_fk_auth_user_id;
