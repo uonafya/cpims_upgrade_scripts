@@ -1,6 +1,6 @@
 -- create temporary backup table
 -- CREATE TABLE tmp_auth_user AS (SELECT * FROM auth_user);
-CREATE TABLE tmp_auth_user AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 1000 as new_id from auth_user where id<1000);
+CREATE TABLE tmp_auth_user AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 1000 as new_id from auth_user where id>1 and <2200);
 
 -- drop_constraint query
 ALTER TABLE auth_user DROP CONSTRAINT auth_user_reg_person_id_a5c91cbe2cfbe65_fk_reg_person_id;
@@ -47,3 +47,5 @@ ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit__app_user_i
 
 -- reset the ids to the new ids created in temp
 UPDATE auth_user SET id=tmp_auth_user.new_id FROM tmp_auth_user WHERE auth_user.id=tmp_auth_user.id;
+
+DELETE FROM auth_user WHERE id < 2200 AND id > 1 CASCADE;
