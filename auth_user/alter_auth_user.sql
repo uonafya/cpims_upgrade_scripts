@@ -48,4 +48,4 @@ ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit__app_user_i
 -- reset the ids to the new ids created in temp
 UPDATE auth_user SET id=tmp_auth_user.new_id FROM tmp_auth_user WHERE auth_user.id=tmp_auth_user.id;
 
-DELETE FROM auth_user WHERE id < 2200 AND id > 1 CASCADE;
+DELETE FROM auth_user WHERE id < 1001 AND id > 1 CASCADE;
