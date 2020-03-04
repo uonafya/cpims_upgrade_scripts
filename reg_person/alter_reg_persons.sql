@@ -159,4 +159,3 @@ alter table reg_persons_org_units add constraint reg_persons_org_org_unit_id_66f
 UPDATE reg_person SET id=tmp_reg_person.new_id FROM tmp_reg_person WHERE reg_person.id=tmp_reg_person.id;
 
 DELETE FROM reg_person WHERE id < 400000 AND id > 1 CASCADE;
-
