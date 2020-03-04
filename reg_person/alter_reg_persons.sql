@@ -1,6 +1,5 @@
 -- backup the original reg_persons overlapping set of records
 CREATE TABLE tmp_reg_person AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 420000 as new_id, created_by_id from reg_person where id > 290000 AND id<400000);
-UPDATE reg_person SET created_by_id=1 WHERE id != 1;
 
 -- drop foreign key constraints to allow adding ON UPDATE CASCADE to the constraints
 alter table reg_person drop constraint reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id;
