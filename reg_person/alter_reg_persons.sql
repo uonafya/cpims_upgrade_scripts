@@ -4,4 +4,4 @@ CREATE TABLE tmp_reg_person AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 10
 -- reset the ids to the new ids created in temp
 UPDATE reg_person SET id=tmp_reg_person.new_id FROM tmp_reg_person WHERE reg_person.id=tmp_reg_person.id;
 
-DELETE FROM reg_person WHERE id < 400000 AND id > 1;
+DELETE FROM reg_person WHERE id > 1 AND id < 400000;
