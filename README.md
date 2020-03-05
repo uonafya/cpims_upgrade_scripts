@@ -1,0 +1,8 @@
+# cpims_upgrade_scripts
+Scripts used in merging DCS &amp; OVC CPIMS instances
+
+1. Drop all constraints in all tables in the database
+2. Reappend all constraints with 'ON DELETE CASCADE ON UPDATE CASCADE' added
+3. Move existing OVC reg_org_unit records up by 650, (i.e. ID 500 becomes ID 7000) to give room for ~500 records from DCS
+4. Move existing OVC reg_person records up by 1020000 for records between 290000 and 420000
+5. Move existing OVC auth_user records up by 1000, starting at ID 2 (i.e. ID 2 becomes ID 1002) to give room for ~900 records from DCS
