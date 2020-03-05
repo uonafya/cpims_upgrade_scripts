@@ -5,4 +5,4 @@ CREATE TABLE tmp_auth_user AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 100
 -- reset the ids to the new ids created in temp
 UPDATE auth_user SET id=tmp_auth_user.new_id FROM tmp_auth_user WHERE auth_user.id=tmp_auth_user.id;
 
-DELETE FROM auth_user WHERE id < 1001 AND id > 1 CASCADE;
+DELETE FROM auth_user WHERE id < 1001 AND id > 1;
