@@ -13,8 +13,7 @@ AS t(id int4, designation varchar , first_name varchar , other_names varchar , s
 
 -- Run successfully on new DB
 ---created by defaulted to 1
--- Also note that this query defaults created by to 1 and you have to delete record 2-48 from OVC DB
-
+-- Also note that this query defaults created by to 1
 --------------auth_user--------
 
 INSERT INTO auth_user (id, "password", last_login, is_superuser, "role", username, is_staff, is_active, timestamp_created, timestamp_updated, password_changed_timestamp, reg_person_id )
