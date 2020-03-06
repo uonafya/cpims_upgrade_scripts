@@ -3,13 +3,18 @@
 Scripts used in merging DCS &amp; OVC CPIMS instances       
 **NOTE:** Ensure you execute the queries/scripts in the sequence given. To that end, do not execute the SQL files directly in your console; rather use/execute the shell script given.
 
-``` shell
+---
 
+Set your Postgres password in your system environment variables
+``` bash
 export PGPASSWORD=password   #your postgres password
+```
+
+Clone this repository and run `install.sh`
+``` bash
 git clone https://github.com/uonafya/cpims_upgrade_scripts
 cd cpims_upgrade_scripts
 sh ./install.sh
-
 ```
 
 ---
