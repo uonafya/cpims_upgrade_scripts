@@ -1,5 +1,7 @@
-# cpims_upgrade_scripts
-Scripts used in merging DCS &amp; OVC CPIMS instances
+# CPIMS-DCS-OVC Merge Queries &amp; Scripts
+
+Scripts used in merging DCS &amp; OVC CPIMS instances       
+**NOTE:** Ensure you execute the queries/scripts in the sequence given. To that end, do not execute the SQL files directly in your console; rather use/execute the shell script given.
 
 ---
 
