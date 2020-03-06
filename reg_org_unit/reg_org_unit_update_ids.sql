@@ -23,3 +23,8 @@ UPDATE reg_org_unit SET id=7021 WHERE id=605;
 UPDATE reg_org_unit SET id=7022 WHERE id=610;
 UPDATE reg_org_unit SET id=7023 WHERE id=640;
 UPDATE reg_org_unit SET id=7024 WHERE id=641;
+
+
+
+
+ delete from reg_org_unit where id>2 and id < 56;
