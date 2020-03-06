@@ -1,3 +1,6 @@
+
+-- drop existing constraints from all tables in the database
+
 ALTER TABLE admin_preferences DROP CONSTRAINT admin_preferences_person_id_689fe9061199a11c_fk_reg_person_id;
 ALTER TABLE admin_upload_forms DROP CONSTRAINT admin_upload_forms_form_id_33832397a43e8e8b_fk_forms_id;
 ALTER TABLE auth_group_detail DROP CONSTRAINT auth_group_detai_group_ptr_id_71815f25d6439db2_fk_auth_group_id;
@@ -205,6 +208,9 @@ ALTER TABLE reg_persons_workforce_ids DROP CONSTRAINT reg_persons_workfor_person
 ALTER TABLE reports_sets_org_unit DROP CONSTRAINT reports_sets_org_uni_set_id_368213d0c27f38bd_fk_reports_sets_id;
 ALTER TABLE school_list DROP CONSTRAINT school_list_school_ward_id_7fc99094dd8c01b4_fk_list_geo_area_id;
 ALTER TABLE school_list DROP CONSTRAINT school_school_subcounty_id_2821240befa9b25f_fk_list_geo_area_id;
+
+
+-- reattach all constraints to all tables with UPDATE_CASCADE DELETE_CASCADE
 ALTER TABLE admin_preferences ADD CONSTRAINT admin_preferences_person_id_689fe9061199a11c_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE admin_upload_forms ADD CONSTRAINT admin_upload_forms_form_id_33832397a43e8e8b_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE auth_group_detail ADD CONSTRAINT auth_group_detai_group_ptr_id_71815f25d6439db2_fk_auth_group_id FOREIGN KEY (group_ptr_id) REFERENCES auth_group(id) ON UPDATE CASCADE ON DELETE CASCADE;
