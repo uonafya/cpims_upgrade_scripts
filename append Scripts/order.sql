@@ -539,6 +539,14 @@ AS t( adverse_condition varchar , timestamp_created date , is_void bool , sync_i
 ----working fine
 
 
+---ovc_economic_status
+INSERT INTO ovc_economic_status (id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id)
+(SELECT id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id  FROM
+    dblink('dbname=cpims_dcs user=postgres ', 'select id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id FROM ovc_economic_status') AS t(id int4, household_economic_status varchar, timestamp_created timestamptz, is_void bool, sync_id uuid, case_id_id uuid, person_id int4)
+);
+---working fine
+
+
 
 
 
