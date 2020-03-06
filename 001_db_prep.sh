@@ -1,5 +1,6 @@
 ## a. Prep DB
 
+echo "001: DB Prep running ..."
 # 1. Alter all constraints
 psql -h localhost -d cpims -U cpimsdbuser -a -w -f all_foreign_keys_unicorn_ever_since_amen.sql
 
@@ -11,3 +12,5 @@ psql -h localhost -d cpims -U cpimsdbuser -a -w -f reg_person/alter_reg_persons.
 
 # 4. Prepare auth_user
 psql -h localhost -d cpims -U cpimsdbuser -a -w -f auth_user/alter_auth_user.sql
+
+echo "001: DB Prep completed"
