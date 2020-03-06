@@ -18,7 +18,7 @@ $ sh ./install.sh
 ```
 
 ---
-
+## What the scripts do:
 ### (a) Prepare the database
 1. Drop all constraints in all tables in the database
 2. Reappend all constraints with 'ON DELETE CASCADE ON UPDATE CASCADE' added
