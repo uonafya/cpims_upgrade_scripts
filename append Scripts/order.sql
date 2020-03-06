@@ -12,6 +12,7 @@ AS t(id int4, designation varchar , first_name varchar , other_names varchar , s
 
 
 -- Run successfully on new DB
+---created by defaulted to 1
 -- Also note that this query defaults created by to 1 and you have to delete record 2-48 from OVC DB
 
 --------------auth_user--------
@@ -458,6 +459,54 @@ INSERT INTO auth_user_groups_geo_org (timestamp_modified, is_void,area_id,group_
 AS t(timestamp_modified timestamp, is_void boolean,area_id integer,group_id integer,org_unit_id integer,user_id integer)
 );
 ---working fine
+
+---django_content_type
+
+INSERT INTO django_content_type ( app_label , model )
+(SELECT app_label , model FROM
+    dblink('dbname=cpims_dcs', 'select app_label, model from django_content_type')
+AS t( app_label varchar , model varchar )
+WHERE model NOT IN (SELECT model FROM django_content_type )
+);
+
+---working fine
+
+
+-----forms_audit_trail
+
+INSERT INTO forms_audit_trail ( transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id )
+(SELECT transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id FROM
+    dblink('dbname=cpims_dcs', 'select transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id from forms_audit_trail')
+AS t( transaction_id int4, form_id uuid, form_type_id varchar, transaction_type_id varchar, interface_id varchar, timestamp_modified date, ip_address inet, meta_data text, app_user_id int4)
+);
+
+--working fine
+
+
+---form_log
+
+INSERT INTO forms_log (form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id)
+(SELECT form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id FROM
+    dblink('dbname=cpims_dcs user=postgres ', 'select form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id from forms_log')
+AS t(form_log_id uuid, form_type_id varchar, form_id varchar, timestamp_created timestamp, is_void boolean, sync_id uuid, timestamp_modified timestamp, app_user int4, person_id int4)
+);
+
+---working fine
+
+
+----list_general
+INSERT INTO list_general (item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified)
+(SELECT item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified FROM
+    dblink('dbname=cpims_dcs', 'select item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified FROM list_general')
+AS t(item_id varchar, item_description varchar, item_description_short varchar , item_category varchar , the_order int4, user_configurable bool, sms_keyword bool, is_void bool, field_name varchar, timestamp_modified date)
+WHERE item_id NOT IN (SELECT item_id FROM list_general) and item_description NOT IN (SELECT item_description FROM list_general)
+);
+
+---working fine
+
+
+
+
 
 
 
