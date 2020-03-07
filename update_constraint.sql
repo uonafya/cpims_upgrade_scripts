@@ -208,6 +208,11 @@ ALTER TABLE reg_persons_workforce_ids DROP CONSTRAINT reg_persons_workfor_person
 ALTER TABLE reports_sets_org_unit DROP CONSTRAINT reports_sets_org_uni_set_id_368213d0c27f38bd_fk_reports_sets_id;
 ALTER TABLE school_list DROP CONSTRAINT school_list_school_ward_id_7fc99094dd8c01b4_fk_list_geo_area_id;
 ALTER TABLE school_list DROP CONSTRAINT school_school_subcounty_id_2821240befa9b25f_fk_list_geo_area_id;
+ALTER TABLE ovc_risk_screening DROP CONSTRAINT ovc_risk_screening_person_id_316c400b9d865700_fk_reg_person_id;
+ALTER TABLE ovc_hiv_management DROP CONSTRAINT ovc_hiv_mana_event_id_7ceb7c37a0299a3b_fk_ovc_care_events_event;
+ALTER TABLE ovc_hiv_management DROP CONSTRAINT ovc_hiv_management_person_id_157920aeb1dea20b_fk_reg_person_id;
+ALTER TABLE ovc_risk_screening DROP CONSTRAINT ovc_risk_scre_event_id_6d21af125a1a130_fk_ovc_care_events_event;
+
 
 
 -- reattach all constraints to all tables with UPDATE_CASCADE DELETE_CASCADE
@@ -418,3 +423,7 @@ ALTER TABLE reg_persons_workforce_ids ADD CONSTRAINT reg_persons_workfor_person_
 ALTER TABLE reports_sets_org_unit ADD CONSTRAINT reports_sets_org_uni_set_id_368213d0c27f38bd_fk_reports_sets_id FOREIGN KEY (set_id) REFERENCES reports_sets(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE school_list ADD CONSTRAINT school_list_school_ward_id_7fc99094dd8c01b4_fk_list_geo_area_id FOREIGN KEY (school_ward_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE school_list ADD CONSTRAINT school_school_subcounty_id_2821240befa9b25f_fk_list_geo_area_id FOREIGN KEY (school_subcounty_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE ovc_risk_screening ADD CONSTRAINT ovc_risk_screening_person_id_316c400b9d865700_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE ovc_hiv_management ADD CONSTRAINT ovc_hiv_mana_event_id_7ceb7c37a0299a3b_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE ovc_hiv_management ADD CONSTRAINT ovc_hiv_management_person_id_157920aeb1dea20b_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE ovc_risk_screening ADD CONSTRAINT ovc_risk_scre_event_id_6d21af125a1a130_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
