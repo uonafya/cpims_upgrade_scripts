@@ -1,429 +1,1309 @@
-
+< ================= Merge queries started ================= 
+< --------------- 001: DB Prep running --------------- ...
+001a: DB Prep: alter all constraints ...
 -- drop existing constraints from all tables in the database
-
 ALTER TABLE admin_preferences DROP CONSTRAINT admin_preferences_person_id_689fe9061199a11c_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE admin_upload_forms DROP CONSTRAINT admin_upload_forms_form_id_33832397a43e8e8b_fk_forms_id;
+ALTER TABLE
 ALTER TABLE auth_group_detail DROP CONSTRAINT auth_group_detai_group_ptr_id_71815f25d6439db2_fk_auth_group_id;
+ALTER TABLE
 ALTER TABLE auth_group_permissions DROP CONSTRAINT auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id;
+ALTER TABLE
 ALTER TABLE auth_group_permissions DROP CONSTRAINT auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id;
+ALTER TABLE
 ALTER TABLE auth_login_policy DROP CONSTRAINT auth_login_policy_user_id_2a000083249850f3_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_password_history DROP CONSTRAINT auth_password_history_user_id_1ecd95ccff6ec6ef_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_permission DROP CONSTRAINT auth_content_type_id_508cf46651277a81_fk_django_content_type_id;
+ALTER TABLE
 ALTER TABLE auth_permission_detail DROP CONSTRAINT auth_p_permission_ptr_id_1ac4f4f95914b3bc_fk_auth_permission_id;
+ALTER TABLE
 ALTER TABLE auth_user DROP CONSTRAINT auth_user_reg_person_id_a5c91cbe2cfbe65_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups DROP CONSTRAINT auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups DROP CONSTRAINT auth_user_groups_appuser_id_140c4151b9b710f6_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org DROP CONSTRAINT aut_group_id_6488fab3d0de08fc_fk_auth_group_detail_group_ptr_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org DROP CONSTRAINT auth_user_groups_geo_o_user_id_53e9b4ca440fa583_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org DROP CONSTRAINT auth_user_groups_g_area_id_1f669a73ac3af2e9_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org DROP CONSTRAINT auth_user_group_org_unit_id_39206d4a7f0712c5_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE auth_user_history DROP CONSTRAINT auth_user_history_by_user_id_16232a83177d557e_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_user_history DROP CONSTRAINT auth_user_history_user_id_349f02c4c5f84b8d_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE auth_user_user_permissions DROP CONSTRAINT auth_user__permission_id_384b62483d7071f0_fk_auth_permission_id;
+ALTER TABLE
 ALTER TABLE auth_user_user_permissions DROP CONSTRAINT auth_user_user_perm_appuser_id_4ded6dff68fa5090_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_application_app_user_id_65ba7900ff55a47_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_applica_school_bank_id_7a2ee36cd24b14d4_fk_list_bank_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_ap_constituency_id_616f01fd89a76df0_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_applicat_county_id_6d7217ba282412a2_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_ap_school_county_id_fdc4caf54e20bbe_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bur_school_constituency_id_2697f98bf0b50cb4_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE bursary_application DROP CONSTRAINT bursary_application_person_id_4c643f1194f4968b_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE core_adverse_conditions DROP CONSTRAINT core_ad_beneficiary_person_id_719b6d857636a1d9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE core_encounters DROP CONSTRAINT core_en_beneficiary_person_id_6dadc9ce770a4bd8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE core_encounters DROP CONSTRAINT core_enco_workforce_person_id_18b7bb16f8b0ac5f_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE core_services DROP CONSTRAINT core_se_beneficiary_person_id_383154ff7012dd9c_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE core_services DROP CONSTRAINT core_serv_workforce_person_id_5c9799b62e38af0d_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE django_admin_log DROP CONSTRAINT django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE django_admin_log DROP CONSTRAINT djan_content_type_id_697914295151027a_fk_django_content_type_id;
+ALTER TABLE
 ALTER TABLE form_encounters_notes DROP CONSTRAINT form_encoun_encounter_id_4232fa84675c5fd4_fk_core_encounters_id;
+ALTER TABLE
 ALTER TABLE form_encounters_notes DROP CONSTRAINT form_en_beneficiary_person_id_52a064c132511b1b_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE form_encounters_notes DROP CONSTRAINT form_enco_workforce_person_id_160ca7f29db3b0ea_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE form_gen_answers DROP CONSTRAINT form_gen_answers_form_id_1b9ad26ed945371f_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_gen_answers DROP CONSTRAINT form_gen_answers_answer_id_253e5bae6069318f_fk_list_answers_id;
+ALTER TABLE
 ALTER TABLE form_gen_answers DROP CONSTRAINT form_gen_answ_question_id_7ee13b6b7b140bf1_fk_list_questions_id;
+ALTER TABLE
 ALTER TABLE form_gen_dates DROP CONSTRAINT form_gen_dates_form_id_5d5ff8db6b171271_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_gen_dates DROP CONSTRAINT form_gen_date_question_id_2e4bd3bc1de916ff_fk_list_questions_id;
+ALTER TABLE
 ALTER TABLE form_gen_numeric DROP CONSTRAINT form_gen_numeric_form_id_766e222af360193f_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_gen_numeric DROP CONSTRAINT form_gen_nume_question_id_1fcb1acd974feaaf_fk_list_questions_id;
+ALTER TABLE
 ALTER TABLE form_gen_text DROP CONSTRAINT form_gen_text_form_id_79c2b9887f53b5f4_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_gen_text DROP CONSTRAINT form_gen_text_question_id_7ff5e592cd3d021e_fk_list_questions_id;
+ALTER TABLE
 ALTER TABLE form_org_unit_contribution DROP CONSTRAINT form_org_unit_contribution_form_id_7c04aa3efa138fc7_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_person_participation DROP CONSTRAINT form_person_participation_form_id_390fae647b12c549_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_res_children DROP CONSTRAINT form_res_children_form_id_46c405daea297874_fk_forms_id;
+ALTER TABLE
 ALTER TABLE form_res_workforce DROP CONSTRAINT form_res_workforce_form_id_6ae0acf30ea34b5e_fk_forms_id;
+ALTER TABLE
 ALTER TABLE forms_audit_trail DROP CONSTRAINT forms_audit_trail_app_user_id_4a93590a789fdf42_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE forms_log DROP CONSTRAINT forms_log_person_id_4d43cca03f06ebdc_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE list_reports_parameter DROP CONSTRAINT list_reports_param_report_id_81cc493e033eddc_fk_list_reports_id;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_followup DROP CONSTRAINT placement_id_id_7b0453fbf3bcbe16_fk_ovc_placement_placement_id;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_followup DROP CONSTRAINT ovc_adverseevents_f_person_id_38ffec45328c45f8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_other_followup DROP CONSTRAINT D25e3fda36d0aa1278f77cfb8ea98c70;
+ALTER TABLE
 ALTER TABLE ovc_bursaryinfo DROP CONSTRAINT ovc_bursaryinfo_person_id_24a67f6766cb6eab_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_assessment DROP CONSTRAINT ovc_care_ass_event_id_556fdf30cc4fa547_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score DROP CONSTRAINT ovc_care_ben_event_id_3a4a670570205e16_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score DROP CONSTRAINT ovc_care_benc_household_id_5203677e6c285387_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score DROP CONSTRAINT ovc_care_benchma_care_giver_id_6017344255d02a8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan DROP CONSTRAINT ovc_care_case_event_id_79906e7c314206c_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan DROP CONSTRAINT ovc_care_cas_form_id_16f6a1757b24e245_fk_ovc_care_forms_form_id;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan DROP CONSTRAINT ovc_care_case__household_id_2544a82d954adf7_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan DROP CONSTRAINT ovc_care_case_plan_person_id_35e8639f96c6589c_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan DROP CONSTRAINT ovc_care_case_pl_caregiver_id_1ee7e0545a5238b6_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara DROP CONSTRAINT ovc_care_cpa_event_id_3c4d3ee968de7945_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara DROP CONSTRAINT question_id_3ea06b6884df0396_fk_ovc_care_questions_question_id;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara DROP CONSTRAINT ovc_care_cpara_household_id_58746b362251858_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara DROP CONSTRAINT ovc_care_cpara_caregiver_id_b181fc46b50fd19_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara DROP CONSTRAINT ovc_care_cpara_person_id_9887f1a7042ed75_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_eav DROP CONSTRAINT ovc_care_eav_event_id_216bae164cb287e4_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_education DROP CONSTRAINT ovc_care_education_school_id_20af8a8bf158eb9d_fk_ovc_school_id;
+ALTER TABLE
 ALTER TABLE ovc_care_education DROP CONSTRAINT ovc_care_education_person_id_7b69631d0229b4f4_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_events DROP CONSTRAINT ovc_care_eve_house_hold_id_3896867d76ef7e5b_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_care_events DROP CONSTRAINT ovc_care_events_person_id_6d442eb1c3b9c142_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_f1b DROP CONSTRAINT ovc_care_f1b_event_id_11f1402c0bd9360b_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_health DROP CONSTRAINT ovc_care_health_facility_id_7bb0e2c19af3da1_fk_ovc_facility_id;
+ALTER TABLE
 ALTER TABLE ovc_care_health DROP CONSTRAINT ovc_care_health_person_id_4293271cb2a0e0df_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_priority DROP CONSTRAINT ovc_care_pri_event_id_5e1302796e091c6f_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_questions DROP CONSTRAINT ovc_care_que_form_id_53a2cb52b5cdc98e_fk_ovc_care_forms_form_id;
+ALTER TABLE
 ALTER TABLE ovc_care_services DROP CONSTRAINT ovc_care_ser_event_id_3b5d2cad68efdaeb_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being DROP CONSTRAINT ovc_care_wel_event_id_78efd01a5191351b_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being DROP CONSTRAINT question_id_575759dabec6a1ac_fk_ovc_care_questions_question_id;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being DROP CONSTRAINT ovc_care_well_household_id_7dd50c4d4dd6e37e_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being DROP CONSTRAINT ovc_care_well_be_caregiver_id_4e891c30892f8711_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being DROP CONSTRAINT ovc_care_well_being_person_id_1e6956af61107ceb_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_case_category DROP CONSTRAINT ovc_case_case_id_id_4b776faae06e5c6c_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_case_category DROP CONSTRAINT ovc_case_category_person_id_72b28b31a90e4fa2_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_case_event_closure DROP CONSTRAINT D1eded6607bd01845ac09aeb33963dfc;
+ALTER TABLE
 ALTER TABLE ovc_case_event_closure DROP CONSTRAINT ovc_case_eve_transfer_to_id_4fb774e5c4ad0246_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_case_event_court DROP CONSTRAINT D94012c9a02be93a20a89a20fb72109a;
+ALTER TABLE
 ALTER TABLE ovc_case_event_court DROP CONSTRAINT D1f44faa60b524669115eb33fca25bf6;
+ALTER TABLE
 ALTER TABLE ovc_case_event_encounters DROP CONSTRAINT a3a3d19119507407ecb15b6c2a6b24b7;
+ALTER TABLE
 ALTER TABLE ovc_case_event_encounters DROP CONSTRAINT D18dbfe5391cbad4a1020750c2019e01;
+ALTER TABLE
 ALTER TABLE ovc_case_events DROP CONSTRAINT ovc_case_events_app_user_id_30b4df3aa8f8294d_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE ovc_case_events DROP CONSTRAINT ovc_case_case_id_id_224aefc35e6ffc4b_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_case_events DROP CONSTRAINT placement_id_id_2e8a00ffea96dbb5_fk_ovc_placement_placement_id;
+ALTER TABLE
 ALTER TABLE ovc_case_event_summon DROP CONSTRAINT D1164e9c2ca86cbd3d09bd452f578c8b;
+ALTER TABLE
 ALTER TABLE ovc_case_event_summon DROP CONSTRAINT D818842202ebddc67b142c9726563a60;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_ca_occurence_county_id_2d91ff26fa57e2e7_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_ca_report_subcounty_id_396579f2d9721c16_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_occurence_subcounty_id_43ba87155721c9ae_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_case_case_id_id_21f512914db21596_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_case__report_orgunit_id_4b91aa433b945a0c_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_case_geo DROP CONSTRAINT ovc_case_geo_person_id_1c8c3a8b3c4ee878_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_case_record DROP CONSTRAINT ovc_case_record_person_id_7bc0d1eac95f2ef5_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_case_sub_category DROP CONSTRAINT D3ad64385bcecb4a6a1942f62f26121f;
+ALTER TABLE
 ALTER TABLE ovc_case_sub_category DROP CONSTRAINT ovc_case_sub_catego_person_id_52c6e163218d6b87_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_checkin DROP CONSTRAINT ovc_checkin_user_id_5c8d644380b650ca_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE ovc_checkin DROP CONSTRAINT ovc_checkin_org_unit_id_122e3432354d0bc4_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_checkin DROP CONSTRAINT ovc_checkin_person_id_341e1a55b34574a6_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_cluster DROP CONSTRAINT ovc_cluster_created_by_id_5d6bb87c43de606e_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE ovc_cluster_cbo DROP CONSTRAINT ovc_cluster_cbo_cluster_id_1e689aed4341f562_fk_ovc_cluster_id;
+ALTER TABLE
 ALTER TABLE ovc_cluster_cbo DROP CONSTRAINT ovc_cluster_cbo_cbo_id_33bfeeaf70ef8906_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_cp_referrals DROP CONSTRAINT ovc_cp_refer_event_id_53a6ef8ef61638b0_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_cp_referrals DROP CONSTRAINT ovc_cp_referrals_person_id_7af48c8301898b80_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_discharge_followup DROP CONSTRAINT placement_id_id_440e8418dc1fd8cf_fk_ovc_placement_placement_id;
+ALTER TABLE
 ALTER TABLE ovc_discharge_followup DROP CONSTRAINT ovc_discharge_follo_person_id_1844c333f0423373_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_documents DROP CONSTRAINT ovc_documents_person_id_43c30508c4e53725_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_economic_status DROP CONSTRAINT ovc_econ_case_id_id_78a6b52d524be775_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_economic_status DROP CONSTRAINT ovc_economic_status_person_id_2f5514e02e797ea1_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_education_followup DROP CONSTRAINT placement_id_id_290f13719665a7cb_fk_ovc_placement_placement_id;
+ALTER TABLE
 ALTER TABLE ovc_education_followup DROP CONSTRAINT ovc_education_follo_person_id_6a38a5e6b4ed20f7_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_education_followup DROP CONSTRAINT ovc_educ_school_id_id_5c7782ea78822587_fk_school_list_school_id;
+ALTER TABLE
 ALTER TABLE ovc_education_level_followup DROP CONSTRAINT D9e80b7da938ffe96b6fb1d5942aa531;
+ALTER TABLE
 ALTER TABLE ovc_eligibility DROP CONSTRAINT ovc_eligibility_person_id_6908bf22989cd96c_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_exit_organization DROP CONSTRAINT ovc_exit_organi_org_unit_id_267b6bf11a65d565_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_exit_organization DROP CONSTRAINT ovc_exit_organizati_person_id_5619af938536da2f_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_explanations DROP CONSTRAINT ovc_explanat_event_id_6004646f861febbe_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_explanations DROP CONSTRAINT ovc_explanat_form_id_48497e12088335a5_fk_ovc_care_forms_form_id;
+ALTER TABLE
 ALTER TABLE ovc_explanations DROP CONSTRAINT question_id_683d218281a02063_fk_ovc_care_questions_question_id;
+ALTER TABLE
 ALTER TABLE ovc_facility DROP CONSTRAINT ovc_facility_sub_county_id_7e8b936a03e959c1_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_family_care DROP CONSTRAINT ovc__adoption_subcounty_id_38cb81bd71047f27_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_family_care DROP CONSTRAINT c0f54c2249085e4481686c5a3bc2c37a;
+ALTER TABLE
 ALTER TABLE ovc_family_care DROP CONSTRAINT ovc_famil_children_office_id_c64d13b454a775d_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_family_care DROP CONSTRAINT ovc_family_fostered_from_id_2db20667204031de_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_family_care DROP CONSTRAINT ovc_family_care_person_id_6eef598575511953_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_family_status DROP CONSTRAINT ovc_fami_case_id_id_5dd512b0d97428fe_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_family_status DROP CONSTRAINT ovc_family_status_person_id_550812c9207e58e0_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_friends DROP CONSTRAINT ovc_frie_case_id_id_37399caee0a8c432_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_friends DROP CONSTRAINT ovc_friends_person_id_1a1f2255943839dc_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_goals DROP CONSTRAINT ovc_goals_event_id_f6066f1f41a33d_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_goals DROP CONSTRAINT ovc_goals_person_id_15a9a56b4fe82b0d_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_hiv_status DROP CONSTRAINT ovc_hiv_stat_event_id_7395cbb611080502_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_hiv_status DROP CONSTRAINT ovc_hiv_status_person_id_589ee89d38cad0d2_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_hobbies DROP CONSTRAINT ovc_hobb_case_id_id_38fa2e27c88ec7b7_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_hobbies DROP CONSTRAINT ovc_hobbies_person_id_859d920b8b14375_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_household DROP CONSTRAINT ovc_household_head_person_id_1440e92f0a7fd77e_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_household_demographics DROP CONSTRAINT ovc_househol_event_id_3b8f50b83885d418_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_household_demographics DROP CONSTRAINT ovc_household_household_id_4056ad7d3b36ebb5_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_household_members DROP CONSTRAINT ovc_househol_house_hold_id_1be87a2b7c2d89d1_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_household_members DROP CONSTRAINT ovc_household_membe_person_id_7493ff94f22e2c92_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_medical DROP CONSTRAINT ovc_medi_case_id_id_7b8103bd684705c0_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_medical DROP CONSTRAINT ovc_medical_person_id_1c5056f9f1bdbde2_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_medical_subconditions DROP CONSTRAINT ovc_me_medical_id_id_7ec650ea7ae9d2f1_fk_ovc_medical_medical_id;
+ALTER TABLE
 ALTER TABLE ovc_medical_subconditions DROP CONSTRAINT ovc_medical_subcond_person_id_7e7e9de3345354ed_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_monitoring DROP CONSTRAINT ovc_monitori_event_id_4271813cf8435712_fk_ovc_care_events_event;
+ALTER TABLE
 ALTER TABLE ovc_monitoring DROP CONSTRAINT ovc_monitorin_household_id_59e45b5b651ca575_fk_ovc_household_id;
+ALTER TABLE
 ALTER TABLE ovc_needs DROP CONSTRAINT ovc_need_case_id_id_1918fc4bd548c8c0_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_needs DROP CONSTRAINT ovc_needs_person_id_13004a3a52dc2d1e_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_placement DROP CONSTRAINT ovc_placement_person_id_159230ec5394f1e8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_placement_followup DROP CONSTRAINT placement_id_id_19d2dd48801a19aa_fk_ovc_placement_placement_id;
+ALTER TABLE
 ALTER TABLE ovc_placement_followup DROP CONSTRAINT ovc_placement_follo_person_id_5ae5f9b064803fb8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_referrals DROP CONSTRAINT D38c7d6a8fc76002ea85bcf6ff147fc9;
+ALTER TABLE
 ALTER TABLE ovc_referrals DROP CONSTRAINT ovc_refe_case_id_id_322188b0ee6d7807_fk_ovc_case_record_case_id;
+ALTER TABLE
 ALTER TABLE ovc_referrals DROP CONSTRAINT ovc_referrals_person_id_7ce20b4c9c16e525_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_registration DROP CONSTRAINT ovc_registratio_child_cbo_id_da1e4ea313b1a78_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE ovc_registration DROP CONSTRAINT ovc_registration_caretaker_id_2908b38dd1f395f3_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_registration DROP CONSTRAINT ovc_registration_child_chv_id_c7ffc9f00f349a7_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_registration DROP CONSTRAINT ovc_registration_person_id_19a6a5e799d240a7_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_reminders DROP CONSTRAINT ovc_reminders_person_id_5da099351d67126c_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_school DROP CONSTRAINT ovc_school_sub_county_id_78656f58c06519b0_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE ovc_sibling DROP CONSTRAINT ovc_sibling_cpims_id_44ff50e1378a42c7_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_sibling DROP CONSTRAINT ovc_sibling_person_id_38e6a8c83483e7e1_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE ovc_viral_load DROP CONSTRAINT ovc_viral_load_person_id_47040e77d2e3be57_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_biometric DROP CONSTRAINT reg_biometric_account_id_adc14cc02ec22e0_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE reg_household DROP CONSTRAINT reg_household_index_child_id_57d96e3174d773bb_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_org_unit DROP CONSTRAINT reg_org_unit_created_by_id_24e2c311540225aa_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_audit_trail DROP CONSTRAINT reg_org_units_audi_app_user_id_4eaebb94181c7a3a_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_audit_trail DROP CONSTRAINT reg_org_units_a_org_unit_id_2b5596189e75b384_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_contact DROP CONSTRAINT reg_org_units_c_org_unit_id_7ff1c683ccdee080_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_external_ids DROP CONSTRAINT reg_org_units_e_org_unit_id_339c801d44047f81_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_geo DROP CONSTRAINT reg_org_units_geo_area_id_300c5c3abaf14da9_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE reg_org_units_geo DROP CONSTRAINT reg_org_units_g_org_unit_id_73a96d0b743bef7b_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE reg_person DROP CONSTRAINT reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE reg_person_master DROP CONSTRAINT reg_person_master_person_id_33b09634671fa083_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail DROP CONSTRAINT reg_persons_audit__app_user_id_3b2a1e563d3e4ba8_fk_auth_user_id;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail DROP CONSTRAINT reg__person_recorded_paper_id_6618b9f482cad177_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail DROP CONSTRAINT reg_persons_audit__app_user_id_3b2a1e563d3e4ba8_fk_auth_user;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail DROP CONSTRAINT reg_persons_audit_tr_person_id_8b2e1b0255f7814_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_beneficiary_ids DROP CONSTRAINT reg_persons_benefic_person_id_17a7c488d7a55f20_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_contact DROP CONSTRAINT reg_persons_contact_person_id_19cb690e5dd2f0a8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_external_ids DROP CONSTRAINT reg_persons_externa_person_id_2d583597d1877ba9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_geo DROP CONSTRAINT reg_persons_geo_area_id_587ea5af96b5b6a9_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE reg_persons_geo DROP CONSTRAINT reg_persons_geo_person_id_5892eb569d0a5d47_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_guardians DROP CONSTRAINT reg_person_guardian_person_id_2103bfec8094b41f_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_guardians DROP CONSTRAINT reg_persons_g_child_person_id_1225eefe2e3874e9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_org_units DROP CONSTRAINT reg_persons_org_org_unit_id_66ff71213e4cd546_fk_reg_org_unit_id;
+ALTER TABLE
 ALTER TABLE reg_persons_org_units DROP CONSTRAINT reg_persons_org_uni_person_id_6ad12ece1a7c07f8_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_siblings DROP CONSTRAINT reg_persons_s_child_person_id_5556b3f51aa1f8a9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_siblings DROP CONSTRAINT reg_persons_sibling_person_id_475bc7dab77bcad9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_types DROP CONSTRAINT reg_persons_types_person_id_269c36756a51e8e3_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reg_persons_workforce_ids DROP CONSTRAINT reg_persons_workfor_person_id_7ec87d703ae015f9_fk_reg_person_id;
+ALTER TABLE
 ALTER TABLE reports_sets_org_unit DROP CONSTRAINT reports_sets_org_uni_set_id_368213d0c27f38bd_fk_reports_sets_id;
+ALTER TABLE
 ALTER TABLE school_list DROP CONSTRAINT school_list_school_ward_id_7fc99094dd8c01b4_fk_list_geo_area_id;
+ALTER TABLE
 ALTER TABLE school_list DROP CONSTRAINT school_school_subcounty_id_2821240befa9b25f_fk_list_geo_area_id;
-ALTER TABLE ovc_risk_screening DROP CONSTRAINT ovc_risk_screening_person_id_316c400b9d865700_fk_reg_person_id;
-ALTER TABLE ovc_hiv_management DROP CONSTRAINT ovc_hiv_mana_event_id_7ceb7c37a0299a3b_fk_ovc_care_events_event;
-ALTER TABLE ovc_hiv_management DROP CONSTRAINT ovc_hiv_management_person_id_157920aeb1dea20b_fk_reg_person_id;
-ALTER TABLE ovc_risk_screening DROP CONSTRAINT ovc_risk_scre_event_id_6d21af125a1a130_fk_ovc_care_events_event;
-
-
-
+ALTER TABLE
 -- reattach all constraints to all tables with UPDATE_CASCADE DELETE_CASCADE
 ALTER TABLE admin_preferences ADD CONSTRAINT admin_preferences_person_id_689fe9061199a11c_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE admin_upload_forms ADD CONSTRAINT admin_upload_forms_form_id_33832397a43e8e8b_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_group_detail ADD CONSTRAINT auth_group_detai_group_ptr_id_71815f25d6439db2_fk_auth_group_id FOREIGN KEY (group_ptr_id) REFERENCES auth_group(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_group_permissions ADD CONSTRAINT auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_group_permissions ADD CONSTRAINT auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_login_policy ADD CONSTRAINT auth_login_policy_user_id_2a000083249850f3_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_password_history ADD CONSTRAINT auth_password_history_user_id_1ecd95ccff6ec6ef_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_permission ADD CONSTRAINT auth_content_type_id_508cf46651277a81_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_permission_detail ADD CONSTRAINT auth_p_permission_ptr_id_1ac4f4f95914b3bc_fk_auth_permission_id FOREIGN KEY (permission_ptr_id) REFERENCES auth_permission(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user ADD CONSTRAINT auth_user_reg_person_id_a5c91cbe2cfbe65_fk_reg_person_id FOREIGN KEY (reg_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups ADD CONSTRAINT auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups ADD CONSTRAINT auth_user_groups_appuser_id_140c4151b9b710f6_fk_auth_user_id FOREIGN KEY (appuser_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org ADD CONSTRAINT aut_group_id_6488fab3d0de08fc_fk_auth_group_detail_group_ptr_id FOREIGN KEY (group_id) REFERENCES auth_group_detail(group_ptr_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org ADD CONSTRAINT auth_user_groups_geo_o_user_id_53e9b4ca440fa583_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org ADD CONSTRAINT auth_user_groups_g_area_id_1f669a73ac3af2e9_fk_list_geo_area_id FOREIGN KEY (area_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_groups_geo_org ADD CONSTRAINT auth_user_group_org_unit_id_39206d4a7f0712c5_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_history ADD CONSTRAINT auth_user_history_by_user_id_16232a83177d557e_fk_auth_user_id FOREIGN KEY (by_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_history ADD CONSTRAINT auth_user_history_user_id_349f02c4c5f84b8d_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_user_permissions ADD CONSTRAINT auth_user__permission_id_384b62483d7071f0_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE auth_user_user_permissions ADD CONSTRAINT auth_user_user_perm_appuser_id_4ded6dff68fa5090_fk_auth_user_id FOREIGN KEY (appuser_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_application_app_user_id_65ba7900ff55a47_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_applica_school_bank_id_7a2ee36cd24b14d4_fk_list_bank_id FOREIGN KEY (school_bank_id) REFERENCES list_bank(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_ap_constituency_id_616f01fd89a76df0_fk_list_geo_area_id FOREIGN KEY (constituency_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_applicat_county_id_6d7217ba282412a2_fk_list_geo_area_id FOREIGN KEY (county_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_ap_school_county_id_fdc4caf54e20bbe_fk_list_geo_area_id FOREIGN KEY (school_county_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bur_school_constituency_id_2697f98bf0b50cb4_fk_list_geo_area_id FOREIGN KEY (school_constituency_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE bursary_application ADD CONSTRAINT bursary_application_person_id_4c643f1194f4968b_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE core_adverse_conditions ADD CONSTRAINT core_ad_beneficiary_person_id_719b6d857636a1d9_fk_reg_person_id FOREIGN KEY (beneficiary_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE core_encounters ADD CONSTRAINT core_en_beneficiary_person_id_6dadc9ce770a4bd8_fk_reg_person_id FOREIGN KEY (beneficiary_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE core_encounters ADD CONSTRAINT core_enco_workforce_person_id_18b7bb16f8b0ac5f_fk_reg_person_id FOREIGN KEY (workforce_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE core_services ADD CONSTRAINT core_se_beneficiary_person_id_383154ff7012dd9c_fk_reg_person_id FOREIGN KEY (beneficiary_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE core_services ADD CONSTRAINT core_serv_workforce_person_id_5c9799b62e38af0d_fk_reg_person_id FOREIGN KEY (workforce_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE django_admin_log ADD CONSTRAINT django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE django_admin_log ADD CONSTRAINT djan_content_type_id_697914295151027a_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_encounters_notes ADD CONSTRAINT form_encoun_encounter_id_4232fa84675c5fd4_fk_core_encounters_id FOREIGN KEY (encounter_id) REFERENCES core_encounters(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_encounters_notes ADD CONSTRAINT form_en_beneficiary_person_id_52a064c132511b1b_fk_reg_person_id FOREIGN KEY (beneficiary_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_encounters_notes ADD CONSTRAINT form_enco_workforce_person_id_160ca7f29db3b0ea_fk_reg_person_id FOREIGN KEY (workforce_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_answers ADD CONSTRAINT form_gen_answers_form_id_1b9ad26ed945371f_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_answers ADD CONSTRAINT form_gen_answers_answer_id_253e5bae6069318f_fk_list_answers_id FOREIGN KEY (answer_id) REFERENCES list_answers(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_answers ADD CONSTRAINT form_gen_answ_question_id_7ee13b6b7b140bf1_fk_list_questions_id FOREIGN KEY (question_id) REFERENCES list_questions(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_dates ADD CONSTRAINT form_gen_dates_form_id_5d5ff8db6b171271_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_dates ADD CONSTRAINT form_gen_date_question_id_2e4bd3bc1de916ff_fk_list_questions_id FOREIGN KEY (question_id) REFERENCES list_questions(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_numeric ADD CONSTRAINT form_gen_numeric_form_id_766e222af360193f_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_numeric ADD CONSTRAINT form_gen_nume_question_id_1fcb1acd974feaaf_fk_list_questions_id FOREIGN KEY (question_id) REFERENCES list_questions(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_text ADD CONSTRAINT form_gen_text_form_id_79c2b9887f53b5f4_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_gen_text ADD CONSTRAINT form_gen_text_question_id_7ff5e592cd3d021e_fk_list_questions_id FOREIGN KEY (question_id) REFERENCES list_questions(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_org_unit_contribution ADD CONSTRAINT form_org_unit_contribution_form_id_7c04aa3efa138fc7_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_person_participation ADD CONSTRAINT form_person_participation_form_id_390fae647b12c549_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_res_children ADD CONSTRAINT form_res_children_form_id_46c405daea297874_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE form_res_workforce ADD CONSTRAINT form_res_workforce_form_id_6ae0acf30ea34b5e_fk_forms_id FOREIGN KEY (form_id) REFERENCES forms(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE forms_audit_trail ADD CONSTRAINT forms_audit_trail_app_user_id_4a93590a789fdf42_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE forms_log ADD CONSTRAINT forms_log_person_id_4d43cca03f06ebdc_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE list_reports_parameter ADD CONSTRAINT list_reports_param_report_id_81cc493e033eddc_fk_list_reports_id FOREIGN KEY (report_id) REFERENCES list_reports(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_followup ADD CONSTRAINT placement_id_id_7b0453fbf3bcbe16_fk_ovc_placement_placement_id FOREIGN KEY (placement_id_id) REFERENCES ovc_placement(placement_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_followup ADD CONSTRAINT ovc_adverseevents_f_person_id_38ffec45328c45f8_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_adverseevents_other_followup ADD CONSTRAINT D25e3fda36d0aa1278f77cfb8ea98c70 FOREIGN KEY (adverse_condition_id_id) REFERENCES ovc_adverseevents_followup(adverse_condition_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_bursaryinfo ADD CONSTRAINT ovc_bursaryinfo_person_id_24a67f6766cb6eab_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_assessment ADD CONSTRAINT ovc_care_ass_event_id_556fdf30cc4fa547_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score ADD CONSTRAINT ovc_care_ben_event_id_3a4a670570205e16_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score ADD CONSTRAINT ovc_care_benc_household_id_5203677e6c285387_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_benchmark_score ADD CONSTRAINT ovc_care_benchma_care_giver_id_6017344255d02a8_fk_reg_person_id FOREIGN KEY (care_giver_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan ADD CONSTRAINT ovc_care_case_event_id_79906e7c314206c_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan ADD CONSTRAINT ovc_care_cas_form_id_16f6a1757b24e245_fk_ovc_care_forms_form_id FOREIGN KEY (form_id) REFERENCES ovc_care_forms(form_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan ADD CONSTRAINT ovc_care_case__household_id_2544a82d954adf7_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan ADD CONSTRAINT ovc_care_case_plan_person_id_35e8639f96c6589c_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_case_plan ADD CONSTRAINT ovc_care_case_pl_caregiver_id_1ee7e0545a5238b6_fk_reg_person_id FOREIGN KEY (caregiver_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara ADD CONSTRAINT ovc_care_cpa_event_id_3c4d3ee968de7945_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara ADD CONSTRAINT question_id_3ea06b6884df0396_fk_ovc_care_questions_question_id FOREIGN KEY (question_id) REFERENCES ovc_care_questions(question_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara ADD CONSTRAINT ovc_care_cpara_household_id_58746b362251858_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara ADD CONSTRAINT ovc_care_cpara_caregiver_id_b181fc46b50fd19_fk_reg_person_id FOREIGN KEY (caregiver_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_cpara ADD CONSTRAINT ovc_care_cpara_person_id_9887f1a7042ed75_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_eav ADD CONSTRAINT ovc_care_eav_event_id_216bae164cb287e4_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_education ADD CONSTRAINT ovc_care_education_school_id_20af8a8bf158eb9d_fk_ovc_school_id FOREIGN KEY (school_id) REFERENCES ovc_school(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_education ADD CONSTRAINT ovc_care_education_person_id_7b69631d0229b4f4_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_events ADD CONSTRAINT ovc_care_eve_house_hold_id_3896867d76ef7e5b_fk_ovc_household_id FOREIGN KEY (house_hold_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_events ADD CONSTRAINT ovc_care_events_person_id_6d442eb1c3b9c142_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_f1b ADD CONSTRAINT ovc_care_f1b_event_id_11f1402c0bd9360b_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_health ADD CONSTRAINT ovc_care_health_facility_id_7bb0e2c19af3da1_fk_ovc_facility_id FOREIGN KEY (facility_id) REFERENCES ovc_facility(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_health ADD CONSTRAINT ovc_care_health_person_id_4293271cb2a0e0df_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_priority ADD CONSTRAINT ovc_care_pri_event_id_5e1302796e091c6f_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_questions ADD CONSTRAINT ovc_care_que_form_id_53a2cb52b5cdc98e_fk_ovc_care_forms_form_id FOREIGN KEY (form_id) REFERENCES ovc_care_forms(form_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_services ADD CONSTRAINT ovc_care_ser_event_id_3b5d2cad68efdaeb_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being ADD CONSTRAINT ovc_care_wel_event_id_78efd01a5191351b_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being ADD CONSTRAINT question_id_575759dabec6a1ac_fk_ovc_care_questions_question_id FOREIGN KEY (question_id) REFERENCES ovc_care_questions(question_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being ADD CONSTRAINT ovc_care_well_household_id_7dd50c4d4dd6e37e_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being ADD CONSTRAINT ovc_care_well_be_caregiver_id_4e891c30892f8711_fk_reg_person_id FOREIGN KEY (caregiver_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_care_well_being ADD CONSTRAINT ovc_care_well_being_person_id_1e6956af61107ceb_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_category ADD CONSTRAINT ovc_case_case_id_id_4b776faae06e5c6c_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_category ADD CONSTRAINT ovc_case_category_person_id_72b28b31a90e4fa2_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_closure ADD CONSTRAINT D1eded6607bd01845ac09aeb33963dfc FOREIGN KEY (case_event_id_id) REFERENCES ovc_case_events(case_event_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_closure ADD CONSTRAINT ovc_case_eve_transfer_to_id_4fb774e5c4ad0246_fk_reg_org_unit_id FOREIGN KEY (transfer_to_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_court ADD CONSTRAINT D94012c9a02be93a20a89a20fb72109a FOREIGN KEY (case_category_id) REFERENCES ovc_case_category(case_category_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_court ADD CONSTRAINT D1f44faa60b524669115eb33fca25bf6 FOREIGN KEY (case_event_id_id) REFERENCES ovc_case_events(case_event_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_encounters ADD CONSTRAINT a3a3d19119507407ecb15b6c2a6b24b7 FOREIGN KEY (case_category_id) REFERENCES ovc_case_category(case_category_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_encounters ADD CONSTRAINT D18dbfe5391cbad4a1020750c2019e01 FOREIGN KEY (case_event_id_id) REFERENCES ovc_case_events(case_event_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_events ADD CONSTRAINT ovc_case_events_app_user_id_30b4df3aa8f8294d_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_events ADD CONSTRAINT ovc_case_case_id_id_224aefc35e6ffc4b_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_events ADD CONSTRAINT placement_id_id_2e8a00ffea96dbb5_fk_ovc_placement_placement_id FOREIGN KEY (placement_id_id) REFERENCES ovc_placement(placement_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_summon ADD CONSTRAINT D1164e9c2ca86cbd3d09bd452f578c8b FOREIGN KEY (case_category_id) REFERENCES ovc_case_category(case_category_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_event_summon ADD CONSTRAINT D818842202ebddc67b142c9726563a60 FOREIGN KEY (case_event_id_id) REFERENCES ovc_case_events(case_event_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_ca_occurence_county_id_2d91ff26fa57e2e7_fk_list_geo_area_id FOREIGN KEY (occurence_county_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_ca_report_subcounty_id_396579f2d9721c16_fk_list_geo_area_id FOREIGN KEY (report_subcounty_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_occurence_subcounty_id_43ba87155721c9ae_fk_list_geo_area_id FOREIGN KEY (occurence_subcounty_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_case_case_id_id_21f512914db21596_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_case__report_orgunit_id_4b91aa433b945a0c_fk_reg_org_unit_id FOREIGN KEY (report_orgunit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_geo ADD CONSTRAINT ovc_case_geo_person_id_1c8c3a8b3c4ee878_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_record ADD CONSTRAINT ovc_case_record_person_id_7bc0d1eac95f2ef5_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_sub_category ADD CONSTRAINT D3ad64385bcecb4a6a1942f62f26121f FOREIGN KEY (case_category_id) REFERENCES ovc_case_category(case_category_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_case_sub_category ADD CONSTRAINT ovc_case_sub_catego_person_id_52c6e163218d6b87_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_checkin ADD CONSTRAINT ovc_checkin_user_id_5c8d644380b650ca_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_checkin ADD CONSTRAINT ovc_checkin_org_unit_id_122e3432354d0bc4_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_checkin ADD CONSTRAINT ovc_checkin_person_id_341e1a55b34574a6_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_cluster ADD CONSTRAINT ovc_cluster_created_by_id_5d6bb87c43de606e_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_cluster_cbo ADD CONSTRAINT ovc_cluster_cbo_cluster_id_1e689aed4341f562_fk_ovc_cluster_id FOREIGN KEY (cluster_id) REFERENCES ovc_cluster(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_cluster_cbo ADD CONSTRAINT ovc_cluster_cbo_cbo_id_33bfeeaf70ef8906_fk_reg_org_unit_id FOREIGN KEY (cbo_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_cp_referrals ADD CONSTRAINT ovc_cp_refer_event_id_53a6ef8ef61638b0_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_cp_referrals ADD CONSTRAINT ovc_cp_referrals_person_id_7af48c8301898b80_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_discharge_followup ADD CONSTRAINT placement_id_id_440e8418dc1fd8cf_fk_ovc_placement_placement_id FOREIGN KEY (placement_id_id) REFERENCES ovc_placement(placement_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_discharge_followup ADD CONSTRAINT ovc_discharge_follo_person_id_1844c333f0423373_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_documents ADD CONSTRAINT ovc_documents_person_id_43c30508c4e53725_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_economic_status ADD CONSTRAINT ovc_econ_case_id_id_78a6b52d524be775_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_economic_status ADD CONSTRAINT ovc_economic_status_person_id_2f5514e02e797ea1_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_education_followup ADD CONSTRAINT placement_id_id_290f13719665a7cb_fk_ovc_placement_placement_id FOREIGN KEY (placement_id_id) REFERENCES ovc_placement(placement_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_education_followup ADD CONSTRAINT ovc_education_follo_person_id_6a38a5e6b4ed20f7_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_education_followup ADD CONSTRAINT ovc_educ_school_id_id_5c7782ea78822587_fk_school_list_school_id FOREIGN KEY (school_id_id) REFERENCES school_list(school_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_education_level_followup ADD CONSTRAINT D9e80b7da938ffe96b6fb1d5942aa531 FOREIGN KEY (education_followup_id_id) REFERENCES ovc_education_followup(education_followup_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_eligibility ADD CONSTRAINT ovc_eligibility_person_id_6908bf22989cd96c_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_exit_organization ADD CONSTRAINT ovc_exit_organi_org_unit_id_267b6bf11a65d565_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_exit_organization ADD CONSTRAINT ovc_exit_organizati_person_id_5619af938536da2f_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_explanations ADD CONSTRAINT ovc_explanat_event_id_6004646f861febbe_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_explanations ADD CONSTRAINT ovc_explanat_form_id_48497e12088335a5_fk_ovc_care_forms_form_id FOREIGN KEY (form_id) REFERENCES ovc_care_forms(form_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_explanations ADD CONSTRAINT question_id_683d218281a02063_fk_ovc_care_questions_question_id FOREIGN KEY (question_id) REFERENCES ovc_care_questions(question_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_facility ADD CONSTRAINT ovc_facility_sub_county_id_7e8b936a03e959c1_fk_list_geo_area_id FOREIGN KEY (sub_county_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_care ADD CONSTRAINT ovc__adoption_subcounty_id_38cb81bd71047f27_fk_list_geo_area_id FOREIGN KEY (adoption_subcounty_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_care ADD CONSTRAINT c0f54c2249085e4481686c5a3bc2c37a FOREIGN KEY (residential_institution_name_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_care ADD CONSTRAINT ovc_famil_children_office_id_c64d13b454a775d_fk_reg_org_unit_id FOREIGN KEY (children_office_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_care ADD CONSTRAINT ovc_family_fostered_from_id_2db20667204031de_fk_reg_org_unit_id FOREIGN KEY (fostered_from_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_care ADD CONSTRAINT ovc_family_care_person_id_6eef598575511953_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_status ADD CONSTRAINT ovc_fami_case_id_id_5dd512b0d97428fe_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_family_status ADD CONSTRAINT ovc_family_status_person_id_550812c9207e58e0_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_friends ADD CONSTRAINT ovc_frie_case_id_id_37399caee0a8c432_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_friends ADD CONSTRAINT ovc_friends_person_id_1a1f2255943839dc_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_goals ADD CONSTRAINT ovc_goals_event_id_f6066f1f41a33d_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_goals ADD CONSTRAINT ovc_goals_person_id_15a9a56b4fe82b0d_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_hiv_status ADD CONSTRAINT ovc_hiv_stat_event_id_7395cbb611080502_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_hiv_status ADD CONSTRAINT ovc_hiv_status_person_id_589ee89d38cad0d2_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_hobbies ADD CONSTRAINT ovc_hobb_case_id_id_38fa2e27c88ec7b7_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_hobbies ADD CONSTRAINT ovc_hobbies_person_id_859d920b8b14375_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_household ADD CONSTRAINT ovc_household_head_person_id_1440e92f0a7fd77e_fk_reg_person_id FOREIGN KEY (head_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_household_demographics ADD CONSTRAINT ovc_househol_event_id_3b8f50b83885d418_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_household_demographics ADD CONSTRAINT ovc_household_household_id_4056ad7d3b36ebb5_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_household_members ADD CONSTRAINT ovc_househol_house_hold_id_1be87a2b7c2d89d1_fk_ovc_household_id FOREIGN KEY (house_hold_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_household_members ADD CONSTRAINT ovc_household_membe_person_id_7493ff94f22e2c92_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_medical ADD CONSTRAINT ovc_medi_case_id_id_7b8103bd684705c0_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_medical ADD CONSTRAINT ovc_medical_person_id_1c5056f9f1bdbde2_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_medical_subconditions ADD CONSTRAINT ovc_me_medical_id_id_7ec650ea7ae9d2f1_fk_ovc_medical_medical_id FOREIGN KEY (medical_id_id) REFERENCES ovc_medical(medical_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_medical_subconditions ADD CONSTRAINT ovc_medical_subcond_person_id_7e7e9de3345354ed_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_monitoring ADD CONSTRAINT ovc_monitori_event_id_4271813cf8435712_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_monitoring ADD CONSTRAINT ovc_monitorin_household_id_59e45b5b651ca575_fk_ovc_household_id FOREIGN KEY (household_id) REFERENCES ovc_household(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_needs ADD CONSTRAINT ovc_need_case_id_id_1918fc4bd548c8c0_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_needs ADD CONSTRAINT ovc_needs_person_id_13004a3a52dc2d1e_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_placement ADD CONSTRAINT ovc_placement_person_id_159230ec5394f1e8_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_placement_followup ADD CONSTRAINT placement_id_id_19d2dd48801a19aa_fk_ovc_placement_placement_id FOREIGN KEY (placement_id_id) REFERENCES ovc_placement(placement_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_placement_followup ADD CONSTRAINT ovc_placement_follo_person_id_5ae5f9b064803fb8_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_referrals ADD CONSTRAINT D38c7d6a8fc76002ea85bcf6ff147fc9 FOREIGN KEY (case_category_id) REFERENCES ovc_case_category(case_category_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_referrals ADD CONSTRAINT ovc_refe_case_id_id_322188b0ee6d7807_fk_ovc_case_record_case_id FOREIGN KEY (case_id_id) REFERENCES ovc_case_record(case_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_referrals ADD CONSTRAINT ovc_referrals_person_id_7ce20b4c9c16e525_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_registration ADD CONSTRAINT ovc_registratio_child_cbo_id_da1e4ea313b1a78_fk_reg_org_unit_id FOREIGN KEY (child_cbo_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_registration ADD CONSTRAINT ovc_registration_caretaker_id_2908b38dd1f395f3_fk_reg_person_id FOREIGN KEY (caretaker_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_registration ADD CONSTRAINT ovc_registration_child_chv_id_c7ffc9f00f349a7_fk_reg_person_id FOREIGN KEY (child_chv_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_registration ADD CONSTRAINT ovc_registration_person_id_19a6a5e799d240a7_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_reminders ADD CONSTRAINT ovc_reminders_person_id_5da099351d67126c_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_school ADD CONSTRAINT ovc_school_sub_county_id_78656f58c06519b0_fk_list_geo_area_id FOREIGN KEY (sub_county_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_sibling ADD CONSTRAINT ovc_sibling_cpims_id_44ff50e1378a42c7_fk_reg_person_id FOREIGN KEY (cpims_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_sibling ADD CONSTRAINT ovc_sibling_person_id_38e6a8c83483e7e1_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE ovc_viral_load ADD CONSTRAINT ovc_viral_load_person_id_47040e77d2e3be57_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_biometric ADD CONSTRAINT reg_biometric_account_id_adc14cc02ec22e0_fk_auth_user_id FOREIGN KEY (account_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_household ADD CONSTRAINT reg_household_index_child_id_57d96e3174d773bb_fk_reg_person_id FOREIGN KEY (index_child_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_unit ADD CONSTRAINT reg_org_unit_created_by_id_24e2c311540225aa_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_audit_trail ADD CONSTRAINT reg_org_units_audi_app_user_id_4eaebb94181c7a3a_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_audit_trail ADD CONSTRAINT reg_org_units_a_org_unit_id_2b5596189e75b384_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_contact ADD CONSTRAINT reg_org_units_c_org_unit_id_7ff1c683ccdee080_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_external_ids ADD CONSTRAINT reg_org_units_e_org_unit_id_339c801d44047f81_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_geo ADD CONSTRAINT reg_org_units_geo_area_id_300c5c3abaf14da9_fk_list_geo_area_id FOREIGN KEY (area_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_org_units_geo ADD CONSTRAINT reg_org_units_g_org_unit_id_73a96d0b743bef7b_fk_reg_org_unit_id FOREIGN KEY (org_unit_id) REFERENCES reg_org_unit(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_person ADD CONSTRAINT reg_person_created_by_id_6077a86828bf2974_fk_auth_user_id FOREIGN KEY (created_by_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_person_master ADD CONSTRAINT reg_person_master_person_id_33b09634671fa083_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit__app_user_id_3b2a1e563d3e4ba8_fk_auth_user_id FOREIGN KEY (app_user_id) REFERENCES auth_user(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg__person_recorded_paper_id_6618b9f482cad177_fk_reg_person_id FOREIGN KEY (person_recorded_paper_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit__app_user_id_3b2a1e563d3e4ba8_fk_auth_user FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_audit_trail ADD CONSTRAINT reg_persons_audit_tr_person_id_8b2e1b0255f7814_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_beneficiary_ids ADD CONSTRAINT reg_persons_benefic_person_id_17a7c488d7a55f20_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_contact ADD CONSTRAINT reg_persons_contact_person_id_19cb690e5dd2f0a8_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_external_ids ADD CONSTRAINT reg_persons_externa_person_id_2d583597d1877ba9_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_geo ADD CONSTRAINT reg_persons_geo_area_id_587ea5af96b5b6a9_fk_list_geo_area_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_geo ADD CONSTRAINT reg_persons_geo_person_id_5892eb569d0a5d47_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_guardians ADD CONSTRAINT reg_person_guardian_person_id_2103bfec8094b41f_fk_reg_person_id FOREIGN KEY (guardian_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_guardians ADD CONSTRAINT reg_persons_g_child_person_id_1225eefe2e3874e9_fk_reg_person_id FOREIGN KEY (child_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_org_units ADD CONSTRAINT reg_persons_org_org_unit_id_66ff71213e4cd546_fk_reg_org_unit_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_org_units ADD CONSTRAINT reg_persons_org_uni_person_id_6ad12ece1a7c07f8_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_siblings ADD CONSTRAINT reg_persons_s_child_person_id_5556b3f51aa1f8a9_fk_reg_person_id FOREIGN KEY (child_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_siblings ADD CONSTRAINT reg_persons_sibling_person_id_475bc7dab77bcad9_fk_reg_person_id FOREIGN KEY (sibling_person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_types ADD CONSTRAINT reg_persons_types_person_id_269c36756a51e8e3_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reg_persons_workforce_ids ADD CONSTRAINT reg_persons_workfor_person_id_7ec87d703ae015f9_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE reports_sets_org_unit ADD CONSTRAINT reports_sets_org_uni_set_id_368213d0c27f38bd_fk_reports_sets_id FOREIGN KEY (set_id) REFERENCES reports_sets(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE school_list ADD CONSTRAINT school_list_school_ward_id_7fc99094dd8c01b4_fk_list_geo_area_id FOREIGN KEY (school_ward_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
 ALTER TABLE school_list ADD CONSTRAINT school_school_subcounty_id_2821240befa9b25f_fk_list_geo_area_id FOREIGN KEY (school_subcounty_id) REFERENCES list_geo(area_id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE ovc_risk_screening ADD CONSTRAINT ovc_risk_screening_person_id_316c400b9d865700_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE ovc_hiv_management ADD CONSTRAINT ovc_hiv_mana_event_id_7ceb7c37a0299a3b_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE ovc_hiv_management ADD CONSTRAINT ovc_hiv_management_person_id_157920aeb1dea20b_fk_reg_person_id FOREIGN KEY (person_id) REFERENCES reg_person(id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE ovc_risk_screening ADD CONSTRAINT ovc_risk_scre_event_id_6d21af125a1a130_fk_ovc_care_events_event FOREIGN KEY (event_id) REFERENCES ovc_care_events(event) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE
+UPDATE reg_org_unit SET id=7000 WHERE id=500;
+UPDATE 1
+UPDATE reg_org_unit SET id=7001 WHERE id=501;
+UPDATE 1
+UPDATE reg_org_unit SET id=7002 WHERE id=502;
+UPDATE 1
+UPDATE reg_org_unit SET id=7003 WHERE id=503;
+UPDATE 1
+UPDATE reg_org_unit SET id=7004 WHERE id=504;
+UPDATE 1
+UPDATE reg_org_unit SET id=7005 WHERE id=505;
+UPDATE 1
+UPDATE reg_org_unit SET id=7006 WHERE id=506;
+UPDATE 1
+UPDATE reg_org_unit SET id=7007 WHERE id=550;
+UPDATE 1
+UPDATE reg_org_unit SET id=7008 WHERE id=551;
+UPDATE 1
+UPDATE reg_org_unit SET id=7009 WHERE id=560;
+UPDATE 1
+UPDATE reg_org_unit SET id=7010 WHERE id=561;
+UPDATE 1
+UPDATE reg_org_unit SET id=7011 WHERE id=562;
+UPDATE 1
+UPDATE reg_org_unit SET id=7012 WHERE id=563;
+UPDATE 1
+UPDATE reg_org_unit SET id=7013 WHERE id=564;
+UPDATE 1
+UPDATE reg_org_unit SET id=7014 WHERE id=565;
+UPDATE 1
+UPDATE reg_org_unit SET id=7015 WHERE id=570;
+UPDATE 1
+UPDATE reg_org_unit SET id=7016 WHERE id=571;
+UPDATE 1
+UPDATE reg_org_unit SET id=7017 WHERE id=580;
+UPDATE 1
+UPDATE reg_org_unit SET id=7018 WHERE id=590;
+UPDATE 1
+UPDATE reg_org_unit SET id=7019 WHERE id=600;
+UPDATE 1
+UPDATE reg_org_unit SET id=7020 WHERE id=601;
+UPDATE 1
+UPDATE reg_org_unit SET id=7021 WHERE id=605;
+UPDATE 1
+UPDATE reg_org_unit SET id=7022 WHERE id=610;
+UPDATE 1
+UPDATE reg_org_unit SET id=7023 WHERE id=640;
+UPDATE 1
+UPDATE reg_org_unit SET id=7024 WHERE id=641;
+UPDATE 1
+ delete from reg_org_unit where id>2 and id < 56;
+DELETE 53
+-- backup the original reg_persons overlapping set of records
+CREATE TABLE tmp_reg_person AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 1020000 as new_id, created_by_id from reg_person where id > 290000 AND id<420000);
+SELECT 31553
+-- reset the ids to the new ids created in temp
+UPDATE reg_person SET id=tmp_reg_person.new_id FROM tmp_reg_person WHERE reg_person.id=tmp_reg_person.id;
+UPDATE 31553
+DELETE FROM reg_person WHERE id > 1 AND id < 400000;
+DELETE 48
+-- create temporary backup table
+CREATE TABLE tmp_auth_user AS (select id, ROW_NUMBER () OVER (ORDER BY id) + 2500 as new_id from auth_user where id > 1);
+SELECT 1902
+-- reset the ids to the new ids created in temp
+UPDATE auth_user SET id=tmp_auth_user.new_id FROM tmp_auth_user WHERE auth_user.id=tmp_auth_user.id;
+UPDATE 1902
+001: --------------- DB Prep completed --------------- />
+< --------------- 002: Data import running --------------- ...
+< 002 (a): import DCS reg_persons ...
+create extension dblink;
+CREATE EXTENSION
+INSERT INTO reg_person (id, designation , first_name , other_names , surname , email, des_phone_number , date_of_birth , date_of_death , sex_id , is_void ,created_at , created_by_id )
+(SELECT id, designation , first_name , other_names , surname , email, des_phone_number , date_of_birth , date_of_death , sex_id , is_void ,created_at , created_by_id FROM
+    dblink('dbname=cpims_dcs', 'select id, designation , first_name , other_names , surname , email, des_phone_number , date_of_birth , date_of_death , sex_id , is_void ,created_at , 1 from reg_person where id > 1')
+AS t(id int4, designation varchar , first_name varchar , other_names varchar , surname varchar , email varchar, des_phone_number int4 , date_of_birth date, date_of_death date, sex_id varchar , is_void bool, created_at date, created_by_id int4)
+);
+INSERT 0 175825
+< 002 (b): import DCS auth_user ...
+--------------auth_user--------
+INSERT INTO auth_user (id, "password", last_login, is_superuser, "role", username, is_staff, is_active, timestamp_created, timestamp_updated, password_changed_timestamp, reg_person_id )
+(SELECT id, "password", last_login, is_superuser, "role", username, is_staff, is_active, timestamp_created, timestamp_updated, password_changed_timestamp, reg_person_id  FROM
+    dblink('dbname=cpims_dcs', 'select id, "password", last_login, is_superuser, "role", CONCAT(username, ''_01'', NULL) as username, is_staff, is_active, timestamp_created, timestamp_updated, password_changed_timestamp, reg_person_id from auth_user where reg_person_id > 1')
+AS t( id int4, "password" varchar, last_login date, is_superuser bool, "role" varchar, username varchar, is_staff bool, is_active bool, timestamp_created date, timestamp_updated date, password_changed_timestamp date, reg_person_id int4));
+INSERT 0 820
+----Duplicates on username during the move. Created a hack for this by adding a suffix on usernames from DCS before moving the data. worked fine
+< 002 (c): import DCS reg_org_unit, reg_org_units_geo ...
+---------reg_org_unit----
+INSERT INTO reg_org_unit ( id, org_unit_id_vis, org_unit_name, org_unit_type_id , date_operational,date_closed,handle_ovc,is_void,parent_org_unit_id,created_at, created_by_id)
+(SELECT id, org_unit_id_vis, org_unit_name, org_unit_type_id , date_operational,date_closed,handle_ovc,is_void,parent_org_unit_id,created_at, created_by_id FROM
+    dblink('dbname=cpims_dcs', 'select id, org_unit_id_vis, org_unit_name, org_unit_type_id , date_operational,date_closed,handle_ovc,is_void,parent_org_unit_id,created_at, created_by_id FROM reg_org_unit where id > 2')
+AS t(id int4,org_unit_id_vis varchar, org_unit_name varchar, org_unit_type_id varchar, date_operational date,date_closed date,handle_ovc boolean,is_void boolean,parent_org_unit_id integer,created_at date, created_by_id integer)
+);
+INSERT 0 557
+---working fine
+------reg_org_units_geo
+INSERT INTO reg_org_units_geo (date_linked, date_delinked, is_void, area_id, org_unit_id)
+(SELECT date_linked, date_delinked, is_void, area_id, org_unit_id FROM
+    dblink('dbname=cpims_dcs user=postgres password=', 'select date_linked, date_delinked, is_void, area_id, org_unit_id FROM reg_org_units_geo where org_unit_id>2')
+AS t(date_linked date,date_delinked date,is_void bool,area_id int4, org_unit_id int4));
+INSERT 0 5448
+---working fine
+< 002 (d): import DCS reg_person_geo, reg_persons_org_units, reg_persons_external_ids, reg_persons_audit_trail ...
+-----reg_person_geo
+INSERT INTO reg_persons_geo ( area_type, date_linked,date_delinked,is_void,area_id,person_id)
+(SELECT area_type, date_linked,date_delinked,is_void,area_id,person_id FROM
+    dblink('dbname=cpims_dcs', 'select area_type, date_linked,date_delinked,is_void,area_id,person_id FROM reg_persons_geo')
+AS t(area_type varchar, date_linked date,date_delinked date,is_void bool,area_id int4,person_id int4)
+);
+INSERT 0 272798
+--working fine
+------------reg_persons_org_units
+ INSERT INTO reg_persons_org_units ( date_linked, date_delinked, primary_unit, reg_assistant, is_void, org_unit_id, person_id)
+     (SELECT date_linked, date_delinked, primary_unit, reg_assistant, is_void, org_unit_id, person_id FROM
+             dblink('dbname=cpims_dcs ', 'select date_linked, date_delinked, primary_unit, reg_assistant, is_void, org_unit_id, person_id from reg_persons_org_units')
+     AS t(date_linked date, date_delinked date, primary_unit bool, reg_assistant bool,is_void bool,  org_unit_id int4, person_id int4)
+);
+INSERT 0 1123
+--working fine
+---reg_persons_external_ids
+INSERT INTO reg_persons_external_ids (identifier_type_id, identifier, is_void, person_id)
+(SELECT identifier_type_id, identifier, is_void, person_id FROM
+dblink('dbname=cpims_dcs', 'select identifier_type_id, identifier, is_void, person_id FROM reg_persons_external_ids') AS t(identifier_type_id varchar, identifier varchar, is_void bool, person_id int4));
+INSERT 0 194419
+--working fine
+---reg_persons_audit_trail
+INSERT INTO reg_persons_audit_trail (transaction_type_id, interface_id, date_recorded_paper, timestamp_modified, ip_address, meta_data, app_user_id, person_id, person_recorded_paper_id)
+(SELECT transaction_type_id, interface_id, date_recorded_paper, timestamp_modified, ip_address, meta_data, app_user_id, person_id, person_recorded_paper_id FROM
+dblink('dbname=cpims_dcs', 'select transaction_type_id, interface_id, date_recorded_paper, timestamp_modified, ip_address, meta_data, app_user_id, person_id, person_recorded_paper_id FROM reg_persons_audit_trail') AS t(transaction_type_id varchar, interface_id varchar, date_recorded_paper date, timestamp_modified timestamptz, ip_address inet, meta_data text, app_user_id int4, person_id int4, person_recorded_paper_id int4));
+INSERT 0 109744
+< 002 (e): import DCS reg_org_units_audit_trail ...
+----reg_org_units_audit_trail
+INSERT INTO reg_org_units_audit_trail (transaction_type_id, interface_id, timestamp_modified , ip_address,meta_data,app_user_id,org_unit_id)
+(SELECT  transaction_type_id, interface_id, timestamp_modified , ip_address,meta_data,app_user_id,org_unit_id FROM
+    dblink('dbname=cpims_dcs', 'select transaction_type_id, interface_id, timestamp_modified , ip_address,meta_data,app_user_id,org_unit_id FROM reg_org_units_audit_trail')
+AS t(transaction_type_id varchar, interface_id varchar, timestamp_modified timestamp, ip_address inet,meta_data text,app_user_id integer,org_unit_id integer)
+);
+INSERT 0 748
+< 002 (f): import DCS reg_person_master, reg_persons_guardians, reg_persons_siblings, reg_persons_types ...
+-----reg_person_master
+INSERT INTO reg_person_master (id, person_type, system_id, timestamp_created, person_id)
+(SELECT id, person_type, system_id, timestamp_created, person_id FROM
+    dblink('dbname=cpims_dcs', 'select id , person_type, system_id, timestamp_created, person_id FROM reg_person_master')
+AS t(id uuid,person_type varchar,system_id varchar,timestamp_created date, person_id int4)
+);
+INSERT 0 25755
+---working fine
+-----reg_persons_guardians
+INSERT INTO reg_persons_guardians (relationship , date_linked, date_delinked, child_headed, is_void , child_person_id, guardian_person_id)
+(SELECT relationship , date_linked, date_delinked, child_headed, is_void , child_person_id, guardian_person_id FROM
+    dblink('dbname=cpims_dcs', 'select relationship , date_linked, date_delinked, child_headed, is_void , child_person_id, guardian_person_id FROM reg_persons_guardians')
+AS t(relationship varchar, date_linked date , date_delinked date, child_headed bool, is_void bool, child_person_id int, guardian_person_id int)
+);
+INSERT 0 69302
+--working fine
+----reg_persons_siblings
+INSERT INTO reg_persons_siblings (date_linked, date_delinked, remarks, is_void , child_person_id, sibling_person_id)
+(SELECT date_linked, date_delinked, remarks, is_void , child_person_id, sibling_person_id FROM
+    dblink('dbname=cpims_dcs', 'select date_linked, date_delinked, remarks, is_void , child_person_id, sibling_person_id FROM reg_persons_siblings')
+AS t(date_linked date , date_delinked date,remarks varchar, is_void bool, child_person_id int, sibling_person_id int)
+);
+INSERT 0 49243
+--working fine
+----reg_persons_types
+INSERT INTO reg_persons_types (person_type_id, date_began, date_ended , is_void,person_id)
+(SELECT person_type_id, date_began, date_ended , is_void,person_id FROM
+    dblink('dbname=cpims_dcs', 'select person_type_id, date_began, date_ended , is_void,person_id FROM reg_persons_types')
+AS t(person_type_id varchar, date_began date, date_ended date, is_void boolean,person_id integer)
+);
+INSERT 0 176003
+< 002 (g): import DCS ovc_case_record, ovc_case_category, ovc_case_geo, ovc_placement, ovc_case_events, ovc_case_event_closure, ovc_case_event_court, ovc_case_event_encounters, ovc_case_event_summon, ovc_case_sub_category ...
+---------------ovc_case_record-----------
+INSERT INTO ovc_case_record (case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id)
+(SELECT case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id FROM
+    dblink('dbname=cpims_dcs', 'select case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id from ovc_case_record')
+AS t(case_id uuid,case_serial varchar, perpetrator_status varchar, perpetrator_first_name varchar,  perpetrator_other_names varchar,perpetrator_surname varchar,perpetrator_relationship_type varchar,risk_level varchar, date_case_opened date,case_reporter_first_name varchar,case_reporter_other_names varchar, case_reporter_surname varchar,case_reporter_contacts varchar, case_reporter varchar, court_name varchar, court_number varchar, police_station varchar,ob_number varchar,case_status varchar, referral_present varchar,timestamp_created date, is_void bool, sync_id uuid, parent_case_id uuid, created_by int, case_remarks varchar, date_of_summon date, summon_status bool, person_id int)
+);
+INSERT 0 6306
+---working fine
+--------------OVC_case_category
+INSERT INTO ovc_case_category ( case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id )
+(SELECT case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM    dblink('dbname=cpims_dcs', 'select case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM ovc_case_category')
+AS t(case_category_id uuid, case_category varchar , case_grouping_id uuid , date_of_event date , place_of_event varchar , case_nature varchar, timestamp_created date, is_void bool ,sync_id uuid , case_id_id uuid, person_id int4));
+INSERT 0 6817
+---working fine
+-----ovc_case_geo
+INSERT INTO ovc_case_geo (id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id )
+(SELECT id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM
+    dblink('dbname=cpims_dcs', 'select id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM ovc_case_geo')
+AS t( id int, report_ward varchar, report_village varchar, occurence_ward varchar, occurence_village varchar, timestamp_created date, is_void bool, sync_id uuid, case_id_id uuid, occurence_county_id int4, occurence_subcounty_id int4, person_id int4, report_orgunit_id int4, report_subcounty_id int4));
+INSERT 0 6234
+-------ovc_placement
+INSERT INTO ovc_placement (placement_id,residential_institution_name , admission_date, admission_type, transfer_from , admission_reason, holding_period , committing_period_units,committing_period,current_residential_status, has_court_committal_order,free_for_adoption,court_order_number, court_order_issue_date, committing_court, placement_notes, ob_number,placement_type,created_by,is_active,timestamp_created,is_void, sync_id,person_id)
+(SELECT placement_id,residential_institution_name , admission_date, admission_type, transfer_from , admission_reason, holding_period , committing_period_units,committing_period,current_residential_status, has_court_committal_order,free_for_adoption,court_order_number, court_order_issue_date, committing_court, placement_notes, ob_number,placement_type,created_by,is_active,timestamp_created,is_void, sync_id,person_id  FROM
+    dblink('dbname=cpims_dcs', 'select placement_id,residential_institution_name , admission_date, admission_type, transfer_from , admission_reason, holding_period , committing_period_units,committing_period,current_residential_status, has_court_committal_order,free_for_adoption,court_order_number, court_order_issue_date, committing_court, placement_notes, ob_number,placement_type,created_by,is_active,timestamp_created,is_void, sync_id,person_id  FROM ovc_placement')
+AS t(placement_id uuid,residential_institution_name varchar, admission_date date, admission_type varchar, transfer_from varchar, admission_reason varchar, holding_period integer, committing_period_units varchar,committing_period integer,current_residential_status varchar, has_court_committal_order varchar,free_for_adoption varchar,court_order_number varchar, court_order_issue_date date, committing_court varchar, placement_notes varchar, ob_number varchar,placement_type varchar,created_by integer,is_active boolean,timestamp_created timestamp,is_void boolean, sync_id uuid,person_id integer)
+);
+INSERT 0 2071
+---working fine
+-----ovc_case_events
+INSERT INTO ovc_case_events(case_event_id, case_event_type_id, date_of_event, case_event_details, case_event_notes, case_event_outcome, next_hearing_date, next_mention_date, 
+plea_taken, application_outcome, timestamp_created, is_void, sync_id, app_user_id, case_id_id, placement_id_id )
+(SELECT case_event_id, case_event_type_id, date_of_event, case_event_details, case_event_notes, case_event_outcome, next_hearing_date, next_mention_date, 
+plea_taken, application_outcome, timestamp_created, is_void, sync_id, app_user_id, case_id_id, placement_id_id FROM
+    dblink('dbname=cpims_dcs', 'select case_event_id, case_event_type_id, date_of_event, case_event_details, case_event_notes, case_event_outcome, next_hearing_date, next_mention_date, 
+plea_taken, application_outcome, timestamp_created, is_void, sync_id, app_user_id, case_id_id, placement_id_id from ovc_case_events')
+AS t( case_event_id uuid, case_event_type_id varchar, date_of_event date, case_event_details varchar, case_event_notes varchar, case_event_outcome varchar, next_hearing_date date, next_mention_date date, 
+plea_taken varchar, application_outcome varchar, timestamp_created date, is_void bool, sync_id uuid, app_user_id int4, case_id_id uuid, placement_id_id uuid));
+INSERT 0 10303
+----working fine
+-------ovc_case_event_closure
+INSERT INTO ovc_case_event_closure (closure_id, case_outcome, date_of_case_closure, case_closure_notes, created_by, timestamp_created, is_void, is_active, sync_id, case_event_id_id, transfer_to_id)
+(SELECT closure_id, case_outcome, date_of_case_closure, case_closure_notes, created_by, timestamp_created, is_void, is_active, sync_id, case_event_id_id, transfer_to_id FROM
+    dblink('dbname=cpims_dcs', 'select closure_id, case_outcome, date_of_case_closure, case_closure_notes, created_by, timestamp_created, is_void, is_active, sync_id, case_event_id_id, transfer_to_id FROM ovc_case_event_closure') AS t(closure_id uuid, case_outcome varchar, date_of_case_closure date, case_closure_notes varchar, created_by int4, timestamp_created timestamptz, is_void bool, is_active bool, sync_id uuid, case_event_id_id uuid, transfer_to_id int4));
+INSERT 0 3995
+----working fine
+---ovc_case_event_court
+INSERT INTO ovc_case_event_court (court_session_id , court_order, timestamp_created, is_void , sync_id, case_category_id , case_event_id_id)
+(SELECT court_session_id , court_order, timestamp_created, is_void , sync_id, case_category_id , case_event_id_id FROM
+    dblink('dbname=cpims_dcs', 'select court_session_id , court_order, timestamp_created, is_void , sync_id, case_category_id , case_event_id_id FROM ovc_case_event_court')
+AS t(court_session_id uuid, court_order varchar, timestamp_created timestamp, is_void boolean, sync_id uuid, case_category_id uuid, case_event_id_id uuid)
+);
+INSERT 0 228
+---working fine
+----ovc_case_event_encounters
+INSERT INTO ovc_case_event_encounters (service_id, service_provided, service_provider, place_of_service, date_of_encounter_event, service_grouping_id, timestamp_created, is_void, sync_id, case_category_id,case_event_id_id)
+(SELECT service_id, service_provided, service_provider, place_of_service, date_of_encounter_event, service_grouping_id, timestamp_created, is_void, sync_id, case_category_id,case_event_id_id FROM 
+    dblink('dbname=cpims_dcs', 'select service_id, service_provided, service_provider, place_of_service, date_of_encounter_event, service_grouping_id, timestamp_created, is_void, sync_id, case_category_id,case_event_id_id from ovc_case_event_encounters')
+AS t(service_id uuid, service_provided varchar, service_provider varchar, place_of_service varchar, date_of_encounter_event date, service_grouping_id uuid, timestamp_created date, is_void bool, sync_id uuid, case_category_id uuid,case_event_id_id uuid)
+);
+INSERT 0 6178
+---working fine
+---ovc_case_event_summon
+INSERT INTO ovc_case_event_summon (summon_id , honoured, honoured_date, summon_date , summon_note, timestamp_created , is_void, sync_id, case_category_id, case_event_id_id)
+(SELECT summon_id , honoured, honoured_date, summon_date , summon_note, timestamp_created , is_void, sync_id, case_category_id, case_event_id_id FROM
+    dblink('dbname=cpims_dcs', 'select summon_id , honoured, honoured_date, summon_date , summon_note, timestamp_created , is_void, sync_id, case_category_id, case_event_id_id FROM ovc_case_event_summon')
+AS t(summon_id uuid, honoured boolean, honoured_date date, summon_date date, summon_note varchar, timestamp_created timestamp, is_void boolean, sync_id uuid, case_category_id uuid, case_event_id_id uuid)
+);
+INSERT 0 3977
+---working fine
+-----ovc_case_sub_category
+INSERT INTO ovc_case_sub_category (case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id)
+(SELECT case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM
+dblink('dbname=cpims_dcs', 'select case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM ovc_case_sub_category') AS t(case_sub_category_id uuid, case_grouping_id uuid, sub_category_id varchar, timestamp_created timestamptz, is_void bool, sync_id uuid, case_category_id uuid, person_id int4));
+INSERT 0 10830
+< 002 (h): import DCS ovc_cluster, ovc_cluster_cbo, ovc_discharge_followup, school_list, ovc_education_followup, ovc_education_level_followup, ovc_family_care, ovc_family_status, ovc_friends, ovc_hobbies, ovc_medical, ovc_medical_subconditions, ovc_placement_followup, ovc_needs, ovc_referrals ...
+INSERT INTO ovc_cluster (id , cluster_name, created_at, is_void ,created_by_id)
+(SELECT id , cluster_name, created_at, is_void ,created_by_id FROM
+    dblink('dbname=cpims_dcs', 'select id , cluster_name, created_at, is_void ,created_by_id FROM ovc_cluster')
+AS t(id uuid, cluster_name varchar, created_at timestamp, is_void boolean,created_by_id integer)
+);
+INSERT 0 2
+--working fine
+----ovc_cluster_cbo
+INSERT INTO ovc_cluster_cbo (id , added_at, is_void, cbo_id ,cluster_id)
+(SELECT id , added_at, is_void, cbo_id ,cluster_id FROM
+    dblink('dbname=cpims_dcs', 'select id , added_at, is_void, cbo_id ,cluster_id FROM ovc_cluster_cbo')
+AS t(id uuid, added_at  timestamp, is_void boolean, cbo_id integer,cluster_id uuid)
+);
+INSERT 0 4
+---working fine
+---ovc_discharge_followup
+INSERT INTO ovc_discharge_followup (discharge_followup_id , type_of_discharge, date_of_discharge, discharge_destination , reason_of_discharge, expected_return_date , actual_return_date , discharge_comments, created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id)
+(SELECT discharge_followup_id , type_of_discharge, date_of_discharge, discharge_destination , reason_of_discharge, expected_return_date , actual_return_date , discharge_comments, created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id FROM
+    dblink('dbname=cpims_dcs', 'select discharge_followup_id , type_of_discharge, date_of_discharge, discharge_destination , reason_of_discharge, expected_return_date , actual_return_date , discharge_comments, created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id FROM ovc_discharge_followup')
+AS t(discharge_followup_id uuid, type_of_discharge varchar, date_of_discharge date, discharge_destination varchar, reason_of_discharge varchar, expected_return_date date, actual_return_date date, discharge_comments varchar, created_by integer,timestamp_created timestamp,is_void boolean,sync_id uuid,person_id integer,placement_id_id uuid)
+);
+INSERT 0 472
+--working fine
+---school_list
+INSERT INTO school_list (school_id, school_name , type_of_school, timestamp_created, is_void , created_by, school_subcounty_id , school_ward_id )
+(SELECT school_id, school_name , type_of_school, timestamp_created, is_void , created_by, school_subcounty_id , school_ward_id  FROM
+   dblink('dbname=cpims_dcs', 'select school_id, school_name , type_of_school, timestamp_created, is_void , created_by, school_subcounty_id , school_ward_id  FROM school_list')
+AS t(school_id uuid, school_name varchar, type_of_school varchar, timestamp_created  timestamp, is_void boolean, created_by integer, school_subcounty_id integer, school_ward_id integer)
+);
+INSERT 0 84
+---working fine
+----ovc_education_followup
+INSERT INTO ovc_education_followup (education_followup_id , admitted_to_school, admission_to_school_date,education_comments,not_in_school_reason,school_admission_type,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id,school_id_id)
+(SELECT education_followup_id , admitted_to_school, admission_to_school_date,education_comments,not_in_school_reason,school_admission_type,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id,school_id_id FROM
+    dblink('dbname=cpims_dcs', 'select education_followup_id , admitted_to_school, admission_to_school_date,education_comments,not_in_school_reason,school_admission_type,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id,school_id_id FROM ovc_education_followup')
+AS t(education_followup_id uuid, admitted_to_school varchar, admission_to_school_date date,education_comments varchar,not_in_school_reason varchar,school_admission_type varchar,created_by integer,timestamp_created timestamp,is_void boolean,sync_id uuid,person_id integer,placement_id_id uuid,school_id_id uuid)
+);
+INSERT 0 346
+----working fine
+---ovc_education_level_followup
+INSERT INTO ovc_education_level_followup (id , admission_level, admission_sublevel,timestamp_created,is_void,sync_id,education_followup_id_id)
+(SELECT id , admission_level, admission_sublevel,timestamp_created,is_void,sync_id,education_followup_id_id FROM
+    dblink('dbname=cpims_dcs', 'select id , admission_level, admission_sublevel,timestamp_created,is_void,sync_id,education_followup_id_id FROM ovc_education_level_followup')
+AS t(id integer, admission_level varchar, admission_sublevel varchar,timestamp_created timestamp,is_void boolean,sync_id uuid,education_followup_id_id uuid)
+);
+INSERT 0 314
+---working fine
+--ovc_family_care
+INSERT INTO ovc_family_care (familycare_id , type_of_care, certificate_number, date_of_certificate_expiry ,type_of_adoption, adoption_country, date_of_adoption, court_name, court_file_number, parental_status, contact_person, adopting_mother_firstname, adopting_mother_surname, adopting_mother_othernames, adopting_mother_idnumber, adopting_mother_contacts, adopting_father_firstname, adopting_father_surname, adopting_father_othernames, adopting_father_idnumber, adopting_father_contacts, adopting_agency, adoption_remarks, created_by, timestamp_created, is_void, sync_id, adoption_subcounty_id, children_office_id, fostered_from_id, person_id, residential_institution_name_id)
+(SELECT familycare_id , type_of_care, certificate_number, date_of_certificate_expiry ,type_of_adoption, adoption_country, date_of_adoption, court_name, court_file_number, parental_status, contact_person, adopting_mother_firstname, adopting_mother_surname, adopting_mother_othernames, adopting_mother_idnumber, adopting_mother_contacts, adopting_father_firstname, adopting_father_surname, adopting_father_othernames, adopting_father_idnumber, adopting_father_contacts, adopting_agency, adoption_remarks, created_by, timestamp_created, is_void, sync_id, adoption_subcounty_id, children_office_id, fostered_from_id, person_id, residential_institution_name_id FROM
+dblink('dbname=cpims_dcs', 'select familycare_id , type_of_care, certificate_number, date_of_certificate_expiry ,type_of_adoption, adoption_country, date_of_adoption, court_name, court_file_number, parental_status, contact_person, adopting_mother_firstname, adopting_mother_surname, adopting_mother_othernames, adopting_mother_idnumber, adopting_mother_contacts, adopting_father_firstname, adopting_father_surname, adopting_father_othernames, adopting_father_idnumber, adopting_father_contacts, adopting_agency, adoption_remarks, created_by, timestamp_created, is_void, sync_id, adoption_subcounty_id, children_office_id, fostered_from_id, person_id, residential_institution_name_id FROM ovc_family_care')
+AS t(familycare_id uuid, type_of_care varchar, certificate_number varchar, date_of_certificate_expiry date,type_of_adoption varchar, adoption_country varchar, date_of_adoption date, court_name varchar, court_file_number  varchar, parental_status varchar, contact_person varchar, adopting_mother_firstname varchar, adopting_mother_surname varchar, adopting_mother_othernames varchar, adopting_mother_idnumber varchar, adopting_mother_contacts varchar, adopting_father_firstname varchar, adopting_father_surname varchar, adopting_father_othernames varchar, adopting_father_idnumber varchar, adopting_father_contacts varchar, adopting_agency varchar, adoption_remarks varchar, created_by integer, timestamp_created timestamp, is_void boolean, sync_id uuid, adoption_subcounty_id integer, children_office_id integer, fostered_from_id integer, person_id integer, residential_institution_name_id integer)
+);
+INSERT 0 19
+---working fine
+---ovc_family_status
+INSERT INTO ovc_family_status (id , family_status, timestamp_created, is_void , sync_id,case_id_id,person_id)
+(SELECT id , family_status, timestamp_created, is_void , sync_id,case_id_id,person_id FROM
+    dblink('dbname=cpims_dcs', 'select id , family_status, timestamp_created, is_void , sync_id,case_id_id,person_id FROM ovc_family_status')
+AS t(id integer, family_status varchar, timestamp_created timestamp, is_void boolean, sync_id uuid,case_id_id uuid,person_id integer)
+);
+INSERT 0 6844
+--working fine
+---ovc_friends
+INSERT INTO ovc_friends (id, friend_firstname, friend_other_names, friend_surname, timestamp_created, is_void, sync_id,case_id_id,person_id)
+(SELECT id, friend_firstname, friend_other_names, friend_surname, timestamp_created, is_void, sync_id,case_id_id,person_id FROM 
+    dblink('dbname=cpims_dcs', 'select id, friend_firstname, friend_other_names, friend_surname, timestamp_created, is_void, sync_id,case_id_id,person_id from ovc_friends')
+AS t(id int, friend_firstname varchar, friend_other_names varchar, friend_surname varchar, timestamp_created date, is_void bool, sync_id uuid,case_id_id uuid,person_id int)
+);
+INSERT 0 523
+--working fine
+--ovc_hobbies
+INSERT INTO ovc_hobbies (id, hobby, timestamp_created,is_void,sync_id,case_id_id,person_id)
+(select id, hobby, timestamp_created,is_void,sync_id,case_id_id,person_id FROM
+    dblink('dbname=cpims_dcs', 'select id, hobby, timestamp_created,is_void,sync_id,case_id_id,person_id FROM ovc_hobbies')
+AS t(id int4,hobby varchar, timestamp_created timestamp,is_void boolean,sync_id uuid,case_id_id uuid,person_id integer)
+);
+INSERT 0 1104
+--working fine
+----ovc_medical
+INSERT INTO ovc_medical (medical_id , mental_condition, physical_condition, other_condition , timestamp_created, is_void , sync_id , case_id_id, person_id)
+(SELECT medical_id , mental_condition, physical_condition, other_condition , timestamp_created, is_void , sync_id , case_id_id, person_id FROM
+    dblink('dbname=cpims_dcs', 'select medical_id , mental_condition, physical_condition, other_condition , timestamp_created, is_void , sync_id , case_id_id, person_id FROM ovc_medical')
+AS t(medical_id uuid, mental_condition varchar, physical_condition varchar, other_condition varchar, timestamp_created timestamp, is_void boolean, sync_id uuid, case_id_id uuid, person_id integer)
+);
+INSERT 0 6234
+--working fine
+---ovc_medical_subconditions
+INSERT INTO ovc_medical_subconditions (medicalsubcond_id , medical_condition, medical_subcondition, timestamp_created , is_void,sync_id,medical_id_id,person_id)
+(SELECT medicalsubcond_id , medical_condition, medical_subcondition, timestamp_created , is_void,sync_id,medical_id_id,person_id FROM
+    dblink('dbname=cpims_dcs', 'select medicalsubcond_id , medical_condition, medical_subcondition, timestamp_created , is_void,sync_id,medical_id_id,person_id FROM ovc_medical_subconditions')
+AS t(medicalsubcond_id uuid, medical_condition varchar, medical_subcondition varchar, timestamp_created timestamp, is_void boolean,sync_id uuid,medical_id_id uuid,person_id integer)
+);
+INSERT 0 107
+---working fine
+----ovc_placement_followup
+INSERT INTO ovc_placement_followup (placememt_followup_id , followup_type, followup_date,followup_details,followup_outcome,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id)
+(SELECT placememt_followup_id , followup_type, followup_date,followup_details,followup_outcome,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id FROM
+    dblink('dbname=cpims_dcs', 'select placememt_followup_id , followup_type, followup_date,followup_details,followup_outcome,created_by,timestamp_created,is_void,sync_id,person_id,placement_id_id FROM ovc_placement_followup')
+AS t(placememt_followup_id uuid, followup_type varchar, followup_date date,followup_details varchar,followup_outcome varchar,created_by integer,timestamp_created timestamp,is_void boolean,sync_id uuid,person_id integer,placement_id_id uuid)
+);
+INSERT 0 2222
+---working fine
+---working fine
+--ovc_needs
+INSERT INTO ovc_needs (id, need_description, need_type, timestamp_created, is_void, sync_id, case_id_id, person_id)
+(SELECT id, need_description, need_type, timestamp_created, is_void, sync_id, case_id_id, person_id FROM 
+    dblink('dbname=cpims_dcs', 'select id, need_description, need_type, timestamp_created, is_void, sync_id, case_id_id, person_id from ovc_needs')
+AS t(id int, need_description varchar, need_type varchar, timestamp_created date, is_void bool, sync_id uuid, case_id_id uuid, person_id int)
+);
+INSERT 0 22031
+--working fine
+----ovc_referrals
+INSERT INTO ovc_referrals (refferal_id , refferal_actor_type, refferal_actor_specify, refferal_to , refferal_status, refferal_startdate , refferal_enddate , referral_grouping_id, timestamp_created , is_void, sync_id,case_category_id,case_id_id,person_id)
+(SELECT refferal_id , refferal_actor_type, refferal_actor_specify, refferal_to , refferal_status, refferal_startdate , refferal_enddate , referral_grouping_id, timestamp_created , is_void, sync_id,case_category_id,case_id_id,person_id FROM
+    dblink('dbname=cpims_dcs', 'select refferal_id , refferal_actor_type, refferal_actor_specify, refferal_to , refferal_status, refferal_startdate , refferal_enddate , referral_grouping_id, timestamp_created , is_void, sync_id,case_category_id,case_id_id,person_id FROM ovc_referrals')
+AS t(refferal_id uuid, refferal_actor_type varchar, refferal_actor_specify varchar, refferal_to varchar, refferal_status varchar, refferal_startdate date, refferal_enddate date, referral_grouping_id uuid, timestamp_created timestamp, is_void boolean, sync_id uuid,case_category_id uuid,case_id_id uuid,person_id integer)
+);
+INSERT 0 2566
+< 002 (i): import DCS reg_household ...
+INSERT INTO reg_household (id , members, is_void, timestamp_created , index_child_id)
+(SELECT id , members, is_void, timestamp_created , index_child_id FROM
+    dblink('dbname=cpims_dcs', 'select id , members, is_void, timestamp_created , index_child_id FROM reg_household')
+AS t(id uuid, members varchar, is_void boolean, timestamp_created timestamp, index_child_id integer)
+);
+INSERT 0 25724
+< 002 (j): import DCS reg_org_units_contact, reg_org_units_external_ids ...
+INSERT INTO reg_org_units_contact (contact_detail_type_id, contact_detail, is_void , org_unit_id)
+(SELECT contact_detail_type_id, contact_detail, is_void , org_unit_id FROM
+    dblink('dbname=cpims_dcs', 'select contact_detail_type_id, contact_detail, is_void , org_unit_id FROM reg_org_units_contact where org_unit_id>2')
+AS t(contact_detail_type_id varchar, contact_detail varchar, is_void boolean, org_unit_id integer)
+);
+INSERT 0 2209
+----working fine 
+---reg_org_units_external_ids
+INSERT INTO reg_org_units_external_ids (identifier_type_id, identifier_value, is_void, org_unit_id)
+(SELECT identifier_type_id, identifier_value, is_void, org_unit_id FROM
+    dblink('dbname=cpims_dcs ', 'select identifier_type_id, identifier_value, is_void, org_unit_id FROM reg_org_units_external_ids where org_unit_id>2')
+AS t(identifier_type_id varchar,identifier_value varchar,is_void bool,org_unit_id int4)
+);
+INSERT 0 228
+< 002 (k): import DCS auth_user_groups, auth_user_user_permissions, auth_user_groups_geo_org ...
+------auth_user_groups
+INSERT INTO auth_user_groups (appuser_id , group_id )
+(SELECT appuser_id , group_id FROM
+    dblink('dbname=cpims_dcs', 'select appuser_id, group_id FROM auth_user_groups')
+AS t(appuser_id int4, group_id int4)
+);
+INSERT 0 4293
+---working fine
+-----auth_user_user_permissions
+INSERT INTO auth_user_user_permissions (appuser_id, permission_id)
+(SELECT appuser_id, permission_id FROM
+    dblink('dbname=cpims_dcs user=postgres ', 'select appuser_id, permission_id from auth_user_user_permissions')
+AS t(appuser_id integer, permission_id integer)
+);
+INSERT 0 32
+---working fine
+----auth_user_groups_geo_org
+INSERT INTO auth_user_groups_geo_org (timestamp_modified, is_void,area_id,group_id,org_unit_id,user_id)
+(SELECT timestamp_modified, is_void,area_id,group_id,org_unit_id,user_id FROM
+    dblink('dbname=cpims_dcs user=postgres ', 'select timestamp_modified, is_void,area_id,group_id,org_unit_id,user_id from auth_user_groups_geo_org')
+AS t(timestamp_modified timestamp, is_void boolean,area_id integer,group_id integer,org_unit_id integer,user_id integer)
+);
+INSERT 0 5069
+---working fine
+< 002 (l): import DCS django_content_type ...
+---django_content_type
+INSERT INTO django_content_type ( app_label , model )
+(SELECT app_label , model FROM
+    dblink('dbname=cpims_dcs', 'select app_label, model from django_content_type')
+AS t( app_label varchar , model varchar )
+WHERE model NOT IN (SELECT model FROM django_content_type )
+);
+INSERT 0 7
+< 002 (m): import DCS forms_audit_trail, forms_log ...
+INSERT INTO forms_audit_trail ( transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id )
+(SELECT transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id FROM
+    dblink('dbname=cpims_dcs', 'select transaction_id, form_id, form_type_id, transaction_type_id, interface_id, timestamp_modified, ip_address, meta_data, app_user_id from forms_audit_trail')
+AS t( transaction_id int4, form_id uuid, form_type_id varchar, transaction_type_id varchar, interface_id varchar, timestamp_modified date, ip_address inet, meta_data text, app_user_id int4)
+);
+INSERT 0 3005
+--working fine
+---form_log
+INSERT INTO forms_log (form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id)
+(SELECT form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id FROM
+    dblink('dbname=cpims_dcs ', 'select form_log_id, form_type_id, form_id, timestamp_created, is_void, sync_id, timestamp_modified, app_user, person_id from forms_log')
+AS t(form_log_id uuid, form_type_id varchar, form_id varchar, timestamp_created timestamp, is_void boolean, sync_id uuid, timestamp_modified timestamp, app_user int4, person_id int4)
+);
+INSERT 0 82307
+< 002 (n): import DCS list_general ...
+----list_general
+INSERT INTO list_general (item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified)
+(SELECT item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified FROM
+    dblink('dbname=cpims_dcs', 'select item_id , item_description, item_description_short, item_category , the_order, user_configurable , sms_keyword , is_void, field_name , timestamp_modified FROM list_general')
+AS t(item_id varchar, item_description varchar, item_description_short varchar , item_category varchar , the_order int4, user_configurable bool, sms_keyword bool, is_void bool, field_name varchar, timestamp_modified date)
+WHERE item_id NOT IN (SELECT item_id FROM list_general) and item_description NOT IN (SELECT item_description FROM list_general)
+);
+INSERT 0 49
+< 002 (o): import DCS ovc_bursaryinfo, ovc_adverseevents_followup, ovc_adverseevents_other_followup, ovc_economic_status ...
+INSERT INTO ovc_bursaryinfo (bursary_id, bursary_type, disbursement_date, amount, "year", term, timestamp_created, is_void, is_active, sync_id, created_by, person_id)
+(SELECT bursary_id, bursary_type, disbursement_date, amount, "year", term, timestamp_created, is_void, is_active, sync_id, created_by, person_id  FROM
+    dblink('dbname=cpims_dcs user=postgres password=admin1234', 'select bursary_id, bursary_type, disbursement_date, amount, "year", term, timestamp_created, is_void, is_active, sync_id, created_by, person_id FROM ovc_bursaryinfo')
+AS t(bursary_id uuid, bursary_type varchar, disbursement_date date, amount varchar, "year" varchar, term varchar, timestamp_created timestamptz, is_void bool, is_active bool, sync_id uuid, created_by int4, person_id int4)
+);
+INSERT 0 25
+---working fine
+----ovc_adverseevents_followup
+INSERT INTO ovc_adverseevents_followup (adverse_condition_id , adverse_condition_description, attendance_type, referral_type , adverse_event_date, created_by , timestamp_created , is_void, sync_id , person_id, placement_id_id  )
+(SELECT adverse_condition_id , adverse_condition_description, attendance_type, referral_type , adverse_event_date, created_by , timestamp_created , is_void, sync_id , person_id, placement_id_id FROM
+    dblink('dbname=cpims_dcs', 'select adverse_condition_id , adverse_condition_description, attendance_type, referral_type , adverse_event_date, created_by , timestamp_created , is_void, sync_id , person_id, placement_id_id FROM ovc_adverseevents_followup')
+AS t(adverse_condition_id uuid, adverse_condition_description varchar, attendance_type varchar , referral_type varchar , adverse_event_date date, created_by int, timestamp_created date, is_void bool, sync_id uuid, person_id int, placement_id_id uuid )
+);
+INSERT 0 177
+---working fine
+-----ovc_adverseevents_other_followup
+INSERT INTO ovc_adverseevents_other_followup (adverse_condition , timestamp_created , is_void , sync_id , adverse_condition_id_id )
+(SELECT adverse_condition , timestamp_created , is_void , sync_id , adverse_condition_id_id FROM
+    dblink('dbname=cpims_dcs', 'select adverse_condition , timestamp_created , is_void , sync_id , adverse_condition_id_id FROM ovc_adverseevents_other_followup')
+AS t( adverse_condition varchar , timestamp_created date , is_void bool , sync_id uuid , adverse_condition_id_id uuid )
+);
+INSERT 0 133
+----working fine
+---ovc_economic_status
+INSERT INTO ovc_economic_status (id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id)
+(SELECT id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id  FROM
+    dblink('dbname=cpims_dcs user=postgres ', 'select id, household_economic_status, timestamp_created, is_void, sync_id, case_id_id, person_id FROM ovc_economic_status') AS t(id int4, household_economic_status varchar, timestamp_created timestamptz, is_void bool, sync_id uuid, case_id_id uuid, person_id int4)
+);
+INSERT 0 6234
+002: --------------- Data import completed --------------- />
+===================== Merge queries completed ===================== />
