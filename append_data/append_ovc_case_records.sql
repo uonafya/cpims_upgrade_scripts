@@ -1,30 +1,30 @@
----------------ovc_case_record-----------
+-- ---------------ovc_case_record-----------
 
-INSERT INTO ovc_case_record (case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage)
-(SELECT case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage FROM
-    dblink('dbname=cpims_dcs', 'select case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage from ovc_case_record')
-AS t(case_id uuid,case_serial varchar, perpetrator_status varchar, perpetrator_first_name varchar,  perpetrator_other_names varchar,perpetrator_surname varchar,perpetrator_relationship_type varchar,risk_level varchar, date_case_opened date,case_reporter_first_name varchar,case_reporter_other_names varchar, case_reporter_surname varchar,case_reporter_contacts varchar, case_reporter varchar, court_name varchar, court_number varchar, police_station varchar,ob_number varchar,case_status varchar, referral_present varchar,timestamp_created date, is_void bool, sync_id uuid, parent_case_id uuid, created_by int, case_remarks varchar, date_of_summon date, summon_status bool, person_id int, case_stage int4)
-);
+-- INSERT INTO ovc_case_record (case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage)
+-- (SELECT case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage FROM
+--     dblink('dbname=cpims_dcs', 'select case_id,case_serial, perpetrator_status, perpetrator_first_name,  perpetrator_other_names,perpetrator_surname,perpetrator_relationship_type,risk_level, date_case_opened,case_reporter_first_name,case_reporter_other_names, case_reporter_surname,case_reporter_contacts, case_reporter, court_name, court_number, police_station,ob_number,case_status, referral_present,timestamp_created, is_void, sync_id, parent_case_id, created_by, case_remarks, date_of_summon, summon_status, person_id, case_stage from ovc_case_record')
+-- AS t(case_id uuid,case_serial varchar, perpetrator_status varchar, perpetrator_first_name varchar,  perpetrator_other_names varchar,perpetrator_surname varchar,perpetrator_relationship_type varchar,risk_level varchar, date_case_opened date,case_reporter_first_name varchar,case_reporter_other_names varchar, case_reporter_surname varchar,case_reporter_contacts varchar, case_reporter varchar, court_name varchar, court_number varchar, police_station varchar,ob_number varchar,case_status varchar, referral_present varchar,timestamp_created date, is_void bool, sync_id uuid, parent_case_id uuid, created_by int, case_remarks varchar, date_of_summon date, summon_status bool, person_id int, case_stage int4)
+-- );
 
----working fine
-
-
---------------OVC_case_category
+-- ---working fine
 
 
-INSERT INTO ovc_case_category ( case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id )
-(SELECT case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM    dblink('dbname=cpims_dcs', 'select case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM ovc_case_category')
-AS t(case_category_id uuid, case_category varchar , case_grouping_id uuid , date_of_event date , place_of_event varchar , case_nature varchar, timestamp_created date, is_void bool ,sync_id uuid , case_id_id uuid, person_id int4));
-
----working fine
+-- --------------OVC_case_category
 
 
------ovc_case_geo
+-- INSERT INTO ovc_case_category ( case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id )
+-- (SELECT case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM    dblink('dbname=cpims_dcs', 'select case_category_id , case_category , case_grouping_id , date_of_event , place_of_event , case_nature , timestamp_created , is_void ,sync_id , case_id_id , person_id FROM ovc_case_category')
+-- AS t(case_category_id uuid, case_category varchar , case_grouping_id uuid , date_of_event date , place_of_event varchar , case_nature varchar, timestamp_created date, is_void bool ,sync_id uuid , case_id_id uuid, person_id int4));
 
-INSERT INTO ovc_case_geo (id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id )
-(SELECT id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM
-    dblink('dbname=cpims_dcs', 'select id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM ovc_case_geo')
-AS t( id int, report_ward varchar, report_village varchar, occurence_ward varchar, occurence_village varchar, timestamp_created date, is_void bool, sync_id uuid, case_id_id uuid, occurence_county_id int4, occurence_subcounty_id int4, person_id int4, report_orgunit_id int4, report_subcounty_id int4));
+-- ---working fine
+
+
+-- -----ovc_case_geo
+
+-- INSERT INTO ovc_case_geo (id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id )
+-- (SELECT id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM
+--     dblink('dbname=cpims_dcs', 'select id, report_ward, report_village, occurence_ward, occurence_village, timestamp_created, is_void, sync_id, case_id_id, occurence_county_id, occurence_subcounty_id, person_id, report_orgunit_id, report_subcounty_id FROM ovc_case_geo')
+-- AS t( id int, report_ward varchar, report_village varchar, occurence_ward varchar, occurence_village varchar, timestamp_created date, is_void bool, sync_id uuid, case_id_id uuid, occurence_county_id int4, occurence_subcounty_id int4, person_id int4, report_orgunit_id int4, report_subcounty_id int4));
 
 -------ovc_placement
 
@@ -89,6 +89,6 @@ AS t(summon_id uuid, honoured boolean, honoured_date date, summon_date date, sum
 
 -----ovc_case_sub_category
 
-INSERT INTO ovc_case_sub_category (case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id)
-(SELECT case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM
-dblink('dbname=cpims_dcs', 'select case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM ovc_case_sub_category') AS t(case_sub_category_id uuid, case_grouping_id uuid, sub_category_id varchar, timestamp_created timestamptz, is_void bool, sync_id uuid, case_category_id uuid, person_id int4));
+-- INSERT INTO ovc_case_sub_category (case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id)
+-- (SELECT case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM
+-- dblink('dbname=cpims_dcs', 'select case_sub_category_id, case_grouping_id, sub_category_id, timestamp_created, is_void, sync_id, case_category_id, person_id FROM ovc_case_sub_category') AS t(case_sub_category_id uuid, case_grouping_id uuid, sub_category_id varchar, timestamp_created timestamptz, is_void bool, sync_id uuid, case_category_id uuid, person_id int4));
