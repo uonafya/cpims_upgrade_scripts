@@ -11,16 +11,16 @@ echo "< --------------- 001: DB Prep running --------------- ..."
 
 # 1. Alter all constraints
 echo "001a: DB Prep: alter all constraints ..."
-# psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f all_foreign_keys_constraints_update_cascade.sql
+psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f all_foreign_keys_constraints_update_cascade.sql
 
 # # 2. Prepare organisation units
-# psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f reg_org_unit/reg_org_unit_update_ids.sql
+psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f reg_org_unit/reg_org_unit_update_ids.sql
 
 # # 3. Prepare reg_person
-# psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f reg_person/alter_reg_persons.sql
+psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f reg_person/alter_reg_persons.sql
 
 # # 4. Prepare auth_user
-# psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f auth_user/alter_auth_user.sql
+psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f auth_user/alter_auth_user.sql
 
 echo "001: --------------- DB Prep completed --------------- />"
 
