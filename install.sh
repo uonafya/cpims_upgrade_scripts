@@ -11,7 +11,8 @@ echo "< --------------- 001: DB Prep running --------------- ..."
 
 # 1. Alter all constraints
 echo "001a: DB Prep: alter all constraints ..."
-psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f all_foreign_keys_constraints_update_cascade.sql
+## psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f all_foreign_keys_constraints_update_cascade.sql
+psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f update_constraint.sql
 
 # # 2. Prepare organisation units
 psql -h localhost  $cpimsdb  $cpimsdbuser -a -w -f reg_org_unit/reg_org_unit_update_ids.sql
